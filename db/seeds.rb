@@ -468,9 +468,7 @@ puts "20/20"
 
 puts "Creating 7 facilities..."
 
-shower = Facility.create(name: "Shower")
-
-
+shower = Facility.create(name: "shower")
 toilet = Facility.create(name: "toilet")
 bbq = Facility.create(name: "bbq")
 bonfire = Facility.create(name: "bonfire")
@@ -481,13 +479,16 @@ pet_allowed = Facility.create(name: "pet_allowed")
 
 facilities = [shower, toilet, bbq, bonfire, electricity, water, wifi, pet_allowed]
 
-# puts "Creating Garden Facility for each Gradens..."
-
-# garden_facility1 = GardenFacility.new(garden_id: 1, facility: facilities.samp)
-
-# puts "1/20"
-
-
+puts "Assign a random amount of facility to gardens"
+Garden.all.each do |garden|
+   rand(1..10).times do
+      facility_samp = facilities.sample
+      unless garden.facilities.include?(facility_samp)
+        GardenFacility.create(garden: garden,
+                              facility: facility_samp)
+      end
+   end
+end
 
 puts "21 users and 20 gardens with garden facilities had been created..."
 puts "You are amazing, we are going to build a super cool app!"
