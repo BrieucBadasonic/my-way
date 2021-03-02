@@ -469,6 +469,8 @@ puts "20/20"
 puts "Creating 7 facilities..."
 
 shower = Facility.create(name: "Shower")
+
+
 toilet = Facility.create(name: "toilet")
 bbq = Facility.create(name: "bbq")
 bonfire = Facility.create(name: "bonfire")
