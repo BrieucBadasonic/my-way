@@ -7,7 +7,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to trip_gardens_path(@trip)
     else
       render 'trips/new'
     end
