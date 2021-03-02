@@ -18,7 +18,7 @@ file = URI.open('')
 user1.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
 user2 = User.new(username: "Marcel",
-                 first_name: "Feindt",
+                 first_name: "Marcel",
                  last_name: "Feindt",
                  email: "marcel@gmail.com",
                  password: "123456")
