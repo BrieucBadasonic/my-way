@@ -1,0 +1,21 @@
+<div id="map">  <!-- map container class? -->
+  <!--This is for the map -->
+</div>
+
+<div class="container">
+  <div class="", style="margin-bottom: 30px"> <!--need to add class -->
+    <h1><strong>Plan Your Trip</strong></h1>
+  </div>
+
+  <div class="", style="margin-bottom: 30px"> <!--need to add class ? -->
+    <p><strong>My final destination is:</strong></p>
+  </div>
+
+  <div class="">
+    <%= simple_form_for @trip do |f| %>
+    <%= f.input :final_destination %>
+    <%#= f.input :photo, as: :file %>
+    <%= f.submit "Start Trip", class: "btn btn-all-pages" %> <!--need to add button to css -->
+    <% end %>
+  </div>
+</div>
