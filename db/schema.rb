@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_165109) do
     t.float "elevation"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.boolean "current"
-    t.boolean "completed"
+    t.boolean "current", default: true
+    t.boolean "completed", default: false
     t.bigint "trip_id", null: false
     t.bigint "garden_id", null: false
     t.datetime "created_at", precision: 6, null: false
