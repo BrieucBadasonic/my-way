@@ -7,11 +7,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-<<<<<<< HEAD
-      redirect_to trip_garden_index_path(@trip)
-=======
       redirect_to trip_gardens_path(@trip)
->>>>>>> master
     else
       render 'trips/new'
     end
