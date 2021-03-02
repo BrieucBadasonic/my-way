@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :trips do
+    resources :gardens, only: [:index]
+  end
+
   resources :trips, only: [:create, :new]
 
   devise_for :users
