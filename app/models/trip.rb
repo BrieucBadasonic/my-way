@@ -1,6 +1,10 @@
 class Trip < ApplicationRecord
   belongs_to :user
   has_many :segments
+<<<<<<< HEAD
+=======
+  has_many :gardens, through: :segments
+>>>>>>> master
 
   validates :final_destination, presence: true
 
