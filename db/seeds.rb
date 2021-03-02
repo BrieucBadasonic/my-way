@@ -480,6 +480,7 @@ pet_allowed = Facility.create(name: "pet_allowed")
 facilities = [shower, toilet, bbq, bonfire, electricity, water, wifi, pet_allowed]
 
 puts "Assign a random amount of facility to gardens"
+
 Garden.all.each do |garden|
    rand(1..10).times do
       facility_samp = facilities.sample
