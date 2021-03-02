@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="backgroundimage" style="background-image: url(' <%= image_url "landingpage.jpg" %>')">
+<h1><strong>Discover, Meet & Share</strong></h1>
+
+<div class="container">
+  <div class="btn primary-btn">
+    <%= link_to "Start Ride Now", new_user_session_path, style: "color: white" %>
+  </div>
+</div>
+</div>
