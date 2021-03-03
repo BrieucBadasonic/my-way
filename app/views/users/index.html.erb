@@ -1,0 +1,26 @@
+<div class="profile text-center">
+  <h1 class="title">Welcome Back <%= @user.first_name %></h1>
+  <div>
+    <%= cl_image_tag @user.photo.key, class: "avatar-profile" %>
+  </div>
+  <div class="mytrips-profile-btn">
+    <%= link_to "My Trip", trip_path(@trips.last) %>
+  </div>
+  <div class="garden-profile-title">
+    <a class="mt-3">My Garden Reservations</a>
+  </div>
+  <div>
+    <div class="mb-3 garden-profile-title">
+      <a>Past Trips</a>
+    </div>
+    <ul class="trip-profile-list">
+      <% @trips.each do |trip| %>
+        <li class="trip-profile-each">
+          <div><%= trip.final_destination.capitalize %></div>
+          <div><%= trip.created_at.strftime("%d/%m/%Y") %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
