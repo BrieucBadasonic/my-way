@@ -21,7 +21,9 @@ class TripsController < ApplicationController
     @markers = @gardens.geocoded.map do |garden|
       {
         lat: garden.latitude,
-        lng: garden.longitude
+        lng: garden.longitude,
+        description: garden.description,
+        infoWindow: render_to_string(partial: "info_window", locals: { garden: garden })
       }
     end
   end
