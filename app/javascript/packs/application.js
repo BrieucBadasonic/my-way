@@ -25,10 +25,12 @@ require("channels")
 // External imports
 import "bootstrap";
 import { createMap } from "../plugins/init_map.js";
+import { callItinaryApi } from "../plugins/init_itinary.js";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   createMap();
+  callItinaryApi();
 });
