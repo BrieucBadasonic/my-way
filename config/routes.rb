@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :trips do
-    resources :gardens, only: [:index]
-  end
 
-  resources :trips, only: [:create, :new]
+  resources :gardens, only: [ :index]
+  resources :trips, only: [ :create, :new, :show ]
 
   devise_for :users
   root to: 'pages#home'
