@@ -3,23 +3,39 @@
 
 
 <div class="container">
-  <div class="", style="margin-bottom: 30px"> <!--need to add class -->
-    <h1><strong>Select your route by picking a garden</strong></h1>
+  <div class="title"> <!--need to add class -->
+    <h1 class="mb-0"><strong>Pick a Garden</strong></h1>
+  </div>
+  <div>
+    <p class="text-center", style="margin-bottom: 20px">Select a route by picking a garden</p>
   </div>
 
-  <div class=""> <!--need to add class with displayflex -->
-    <div class="", style="margin-bottom: 30px"> <!--add info from api -->
-      <p><strong>Distance:</strong></p>
-    </div>
-
-    <div class="", style="margin-bottom: 30px"> <!--add info from api  -->
-      <p><strong>Elevation:</strong></p>
-    </div>
-
-    <div class="", style="margin-bottom: 30px"> <!--add info from api  -->
-      <p><strong>Time:</strong></p>
+<div class="stats-container">
+  <div class="stats-container-distance"> <!--need to add class with displayflex -->
+    <div class="distance"> <!--add info from api -->
+      <i class="icons-stats fas fa-route fa-2x"></i>
+      <p class="text-center mb-0"><strong> 4km </strong></p>
+      <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
     </div>
   </div>
 
+  <div class="stats-container-elevation">
+    <div class="elevation">
+      <i class="icons-stats fas fa-arrow-up fa-2x"></i> <!--add info from api  -->
+      <p class="text-center mb-0"><strong> 345m </strong></p>
+      <p class="font-description mb-0"><strong>Elevation</strong></p> <!-- add calculation -->
+    </div>
+  </div>
+
+  <div class="stats-container-duration">
+    <div class="duration">
+      <i class="icons-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
+      <p class="text-center mb-0"><strong> 5:42h </strong></p>
+      <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
+    </div>
+  </div>
 </div>
 
+<div class="btn btn-primary">
+  <%= link_to "Start Trip" %>
+</div>
