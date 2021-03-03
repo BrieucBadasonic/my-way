@@ -1,3 +1,51 @@
+.stats-container-elevation {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(147, 159, 92, 0.5);
+  padding: 12px;
+  border-radius: 10px;
+  align-items: flex-end;
+  // box-shadow: 0 8px 16px 0 rgba(147, 159, 92, 0.5), 0 6px 20px 0 rgba(147, 159, 92, 0.5);
+}
 
+.stats-container-distance {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(216, 142, 86, 0.5);
+  border-radius: 10px;
+  padding: 12px;
+  // box-shadow: 0 8px 16px 0 rgba(216, 142, 86, 0.5), 0 6px 20px 0 rgba(216, 142, 86, 0.5);
+}
 
-// squares in colors with icons and description below
+.stats-container-duration {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(229, 180, 142, 0.5);
+  border-radius: 10px;
+  padding: 12px;
+  // box-shadow: 0 8px 16px 0 rgba(229, 180, 142, 0.5), 0 6px 20px 0 rgba(229, 180, 142, 0.5);
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.font-description {
+  font-size: 12px;
+}
+
+.icons-stats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
