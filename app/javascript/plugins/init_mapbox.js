@@ -27,17 +27,42 @@ const initMapbox = () => {
         accessToken: mapboxgl.accessToken,
         unit: "metric",
         profile: "mapbox/cycling",
+        controls: {
+          inputs: false,
+          instructions: false,
+          profileSwitcher: false
+        }
       });
 
       map.addControl(directions, "top-left");
 
-      directions.setOrigin("Rudi-Dutschke-Straße 26, 10969 Berlin");
-      directions.setDestination("");
+      let finalDestination = mapElement.dataset.finalDestination
+      if (finalDestination) {
+        directions.setOrigin("Rudi-Dutschke-Straße 26, 10969 Berlin");
+        directions.setDestination(finalDestination);
+      };
 
       const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {
         new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
-        directions.addWaypoint(0, [marker.lng, marker.lat]);
+      });
+
+      markers.forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+        // Create a HTML element for your custom marker
+        const element = document.createElement('div');
+        element.className = 'marker';
+        element.style.backgroundImage = `url('${marker.image_url}')`;
+        element.style.backgroundSize = 'contain';
+        element.style.width = '25px';
+        element.style.height = '25px';
+
+        // Pass the element as an argument to the new marker
+        new mapboxgl.Marker(element)
+          .setLngLat([marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(map);
       });
 
       fitMapToMarkers(map, markers);
