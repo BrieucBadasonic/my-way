@@ -34,3 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   createMap();
   callItinaryApi();
 });
+
+import "controllers"
