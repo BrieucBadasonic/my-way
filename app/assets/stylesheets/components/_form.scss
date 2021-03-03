@@ -8,11 +8,12 @@
   // font-weight: 400;
   line-height: 1.5;
   color: #495057;
+  background-color: rgba(252, 246, 241, 0.7);
   background-clip: padding-box;
-  border: 1px solid #C27026;
+  border: 1px solid #FCF6F1;
   border-radius: 2px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  box-shadow: 0 8px 16px 0 rgba(49, 55, 21, 0.3), 0 6px 20px 0 rgba(49, 55, 21, 0.3);
+  transition: box-shadow 0.15s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(49, 55, 21, 0.2), 0 6px 20px 0 rgba(49, 55, 21, 0.2);
   justify-content: flex-start;
   align-self: center;
 }
