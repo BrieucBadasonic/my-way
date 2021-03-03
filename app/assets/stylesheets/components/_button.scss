@@ -6,29 +6,38 @@
   padding: 8px 24px;
   display: flex;
   justify-content: center;
-  align-self: center;
-  width: 90%;
-  opacity: 0.75;
+  width: 92%;
+  opacity: 0.8;
   box-shadow: 0 8px 16px 0 rgba(49, 55, 21, 0.7), 0 6px 20px 0 rgba(49, 55, 21, 0.7);
   position: absolute;
   bottom: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
 }
 
 .primary-btn:hover {
   text-decoration: none;
+  opacity: 0.9;
 }
 
 .secondary-btn {
-  background: rgba(white, 0.2);
-  color: #B28038;
-  border: 1px solid #B28038;
+  background: rgba(white, 0.3);
+  color: #D16014;
+  border: 2px solid #D16014;
   border-radius: 3px;
   padding: 8px 24px;
   display: block;
   text-decoration: none;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 30px;
+  width: 90%;
+  box-shadow: 0 8px 16px 0 rgba(49, 55, 21, 0.7), 0 6px 20px 0 rgba(49, 55, 21, 0.7);
+  transition: background 0.3s ease;
 }
 
 .secondary-btn:hover {
   text-decoration: none;
+  opacity: 0.9;
 }
