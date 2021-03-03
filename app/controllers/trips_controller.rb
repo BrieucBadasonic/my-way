@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   def new
     @trip = Trip.new
+    @markers = [lat: 52.506872, lng: 13.3913749]
   end
 
   def create

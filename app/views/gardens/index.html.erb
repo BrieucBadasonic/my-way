@@ -1,5 +1,4 @@
-<div id="map" data-thunderforest-api-key="<%= ENV['THUNDERFOREST_API_KEY'] %>"
- data-cyclestreet-api-key="<%= ENV['CYCLESTREET_API_KEY'] %>" data-lat="<%= @latitude %>" data-lng="<%=@longitude%>">
+<div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>">
 </div>
 
 
