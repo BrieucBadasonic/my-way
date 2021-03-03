@@ -27,17 +27,24 @@ const initMapbox = () => {
         accessToken: mapboxgl.accessToken,
         unit: "metric",
         profile: "mapbox/cycling",
+        controls: {
+          inputs: false,
+          instructions: false,
+          profileSwitcher: false
+        }
       });
 
       map.addControl(directions, "top-left");
 
-      directions.setOrigin("Rudi-Dutschke-Straße 26, 10969 Berlin");
-      directions.setDestination("");
+      let finalDestination = mapElement.dataset.finalDestination
+      if (finalDestination) {
+        directions.setOrigin("Rudi-Dutschke-Straße 26, 10969 Berlin");
+        directions.setDestination(finalDestination);
+      };
 
       const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {
         new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
-        directions.addWaypoint(0, [marker.lng, marker.lat]);
       });
 
       fitMapToMarkers(map, markers);
