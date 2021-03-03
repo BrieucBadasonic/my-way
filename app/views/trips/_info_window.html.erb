@@ -1,1 +1,13 @@
 <h2><%= garden.name %></h2>
+<p><%= garden.tent_capacity %></p>
+<p><% garden.facilities.each do |facility| %>
+  <%= facility.name %>
+  <% end %>
+</p>
+<%= cl_image_tag garden.photo.key, class:"" %>
+
+
+
+
+
+

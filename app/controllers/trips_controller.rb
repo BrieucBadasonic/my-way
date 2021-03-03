@@ -22,7 +22,9 @@ class TripsController < ApplicationController
       {
         lat: garden.latitude,
         lng: garden.longitude,
+        name: garden.name,
         description: garden.description,
+        facility: garden.facilities.all,
         infoWindow: render_to_string(partial: "info_window", locals: { garden: garden })
       }
     end
