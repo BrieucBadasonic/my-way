@@ -3,19 +3,20 @@
 </div>
 
 <div class="container">
-  <div class="", style="margin-bottom: 30px"> <!--need to add class -->
+  <div class="title text-center"> <!--need to add class -->
     <h1><strong>Plan Your Trip</strong></h1>
   </div>
 
-  <div class="", style="margin-bottom: 30px"> <!--need to add class ? -->
+<!--   <div class="", style="margin-bottom: 30px"> need to add class ?
     <p><strong>My final destination is:</strong></p>
   </div>
+ -->
 
-  <div class="">
+  <div class="text-center">
     <%= simple_form_for @trip do |f| %>
-    <%= f.input :final_destination %>
+    <%= f.input :final_destination, placeholder: 'Where do you want your bike to take you?' %>
     <%#= f.input :photo, as: :file %>
-    <%= f.submit "Start Trip", class: "btn btn-all-pages" %> <!--need to add button to css -->
+    <%= f.submit "Start Trip", class: "btn primary-btn" %>
     <% end %>
   </div>
 </div>
