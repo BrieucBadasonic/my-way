@@ -45,7 +45,6 @@ const callApiToGetDistanceAndTime = (coordinates) => {
             seconds -= minutes * (60);
 
       updateStats(distance, hours, minutes);
-      console.log(typeOf(distance))
     })
   };
 
