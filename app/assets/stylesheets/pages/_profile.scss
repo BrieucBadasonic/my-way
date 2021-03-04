@@ -1,0 +1,65 @@
+.profile {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(49, 55, 21, 0.5) 0%, rgba(209, 96, 20, 1) 100%);
+}
+
+.mytrips-profile-btn {
+  background: #D16014;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 8px 24px;
+  display: inline-block;
+  // justify-content: center;
+  width: 92%;
+  opacity: 0.8;
+  bottom: 0px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  padding-left: 32px;
+  padding-right: 32px;
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+}
+
+.garden-profile-title {
+  background: #D16014;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 8px 24px;
+  display: inline-block;
+  // justify-content: center;
+  width: 92%;
+  opacity: 0.8;
+  bottom: 0px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  padding-left: 32px;
+  padding-right: 32px;
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+}
+
+.trip-profile-list {
+  display: inline-block;
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.trip-profile-each {
+  background-color: white;
+  // width: 70%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 0;
+}
+
