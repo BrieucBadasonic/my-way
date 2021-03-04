@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
   resources :gardens, only: [ :index]
+
   resources :trips, only: [ :create, :new, :show ] do
     resources :segments, only: [ :create ]
   end
 
   resources :segments, only: [ :show ]
+ 
+  resources :users, only: [ :index ]
 
   devise_for :users
   root to: 'pages#home'
