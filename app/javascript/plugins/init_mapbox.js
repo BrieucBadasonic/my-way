@@ -12,12 +12,13 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
-// const updateStats = (distance, time) => {
-//   const statsDistance = document.querySelector(".stats-container-distance")
-//   statsDistance.insertAdjacentHTML("beforeend", distance)
-//   const statsTime = document.querySelector(".stats-container-distance")
-//   statsTime.insertAdjacentHTML("beforeend", time)
-// };
+const updateStats = (distance, hours, minutes) => {
+  const statsDistance = document.querySelector(".distance-insert")
+  statsDistance.insertAdjacentHTML("beforeend", `<strong>${distance.toFixed(1)} Km</strong>`)
+
+  const statsTime = document.querySelector(".time-insert")
+  statsTime.insertAdjacentHTML("beforeend", `<strong>${hours}:${minutes}</strong>`)
+};
 
 const callApiToGetDistanceAndTime = (coordinates) => {
 
@@ -35,9 +36,16 @@ const callApiToGetDistanceAndTime = (coordinates) => {
   }
   postData(statsApiUrl, {coordinates})
     .then(data => {
-      const distance = data.routes[0].distance
-      const duration = data.routes[0].duration
-      console.log(distance, duration)
+      const distance = data.routes[0].distance / 1000
+      let seconds = data.routes[0].duration
+
+      const hours    = Math.floor(seconds / (60*60));
+            seconds -= hours   * (60*60);
+      const minutes  = Math.floor(seconds / (60));
+            seconds -= minutes * (60);
+
+      updateStats(distance, hours, minutes);
+      console.log(typeOf(distance))
     })
   };
 
