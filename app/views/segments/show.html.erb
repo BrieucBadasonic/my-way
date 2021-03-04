@@ -1,16 +1,12 @@
 <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   data-markers="<%= @markers.to_json %>"
-  data-final-destination="<%= @trip.final_destination %>"
+  data-destination="<%= @segment.garden %>"
   >
 </div>
 
-
 <div class="container">
   <div class="title"> <!--need to add class -->
-    <h1 class="mb-0"><strong>Pick a Garden</strong></h1>
-  </div>
-  <div>
-    <p class="text-center", style="margin-bottom: 20px">Select a route by picking a garden</p>
+    <h1 class="mb-0"><strong>Todays ride</strong></h1>
   </div>
 
 <div class="stats-container">
@@ -39,6 +35,9 @@
   </div>
 </div>
 
+<p>Today you sleep in <%= @garden.name %> at <%= @garden.user.username %></p>
+
+
 <div>
-  <%= link_to "Change final destination", new_trip_path, class: "btn primary-btn" %>
+  <%= link_to "Start Ride", class: "btn primary-btn" %>
 </div>

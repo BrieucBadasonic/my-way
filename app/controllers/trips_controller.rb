@@ -16,6 +16,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @segment = Segment.new
     @gardens = Garden.near(@trip.final_destination, 1000)
 
     @markers = @gardens.geocoded.map do |garden|
