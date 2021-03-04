@@ -8,3 +8,10 @@
 </div>
 
 
+<%= simple_form_for [@trip, @segment] do |f| %>
+<%= f.association :garden, as: :hidden, input_html: { value: garden.id } %>
+<%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
+<%= f.button :submit, "Choose this garden", class: "btn primary-btn" %>
+<% end %>
+
+<%= cl_image_tag garden.photo.key, class:"" %>
