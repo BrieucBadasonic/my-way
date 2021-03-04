@@ -247,7 +247,7 @@ puts "Creating 20 gardens..."
 
 garden1 = Garden.new(name: "Wallnut Garden",
                    description: "Welcome to our beatifull garden, where you can stay under the walnut tree. On sunny days you can enjoy our natural swimming pool and an outdoor shower.",
-                   address: "Lindenallee 8 15834 Rangsdorf",
+                   address: "An den Pferdekoppeln 30 15806 Zossen",
                    tent_capacity: 1,
                    user: user2)
 garden1.save!
