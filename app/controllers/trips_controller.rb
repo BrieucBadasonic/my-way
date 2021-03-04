@@ -16,6 +16,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @segment = Segment.new
     @gardens = Garden.near(@trip.final_destination, 1000)
     @wagonlat = 52.506872
     @wagonlng = 13.3913749
