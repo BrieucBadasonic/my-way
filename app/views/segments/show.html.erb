@@ -5,14 +5,14 @@
 </div>
 
 <div class="container">
-  <div class="title"> <!--need to add class -->
-    <h1 class="mb-3"><strong>Todays ride</strong></h1>
+  <div class=""> <!--need to add class -->
+    <h1 class="title mb-2"><strong>Details of todays ride</strong></h1>
   </div>
 
 <div class="stats-container">
   <div class="stats-container-distance"> <!--need to add class with displayflex -->
     <div class="distance"> <!--add info from api -->
-      <i class="icons-stats fas fa-route fa-2x"></i>
+      <i class="distance-icon-stats fas fa-route fa-1x"></i>
       <p class="text-center mb-0"><strong> 4km </strong></p>
       <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
     </div>
@@ -20,7 +20,7 @@
 
   <div class="stats-container-elevation">
     <div class="elevation">
-      <i class="icons-stats fas fa-arrow-up fa-2x"></i> <!--add info from api  -->
+      <i class="elevation-icon-stats fas fa-arrow-up fa-1x"></i> <!--add info from api  -->
       <p class="text-center mb-0"><strong> 345m </strong></p>
       <p class="font-description mb-0"><strong>Elevation</strong></p> <!-- add calculation -->
     </div>
@@ -28,16 +28,22 @@
 
   <div class="stats-container-duration">
     <div class="duration">
-      <i class="icons-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
+      <i class="duration-icon-stats fas fa-stopwatch fa-1x"></i> <!--add info from api  -->
       <p class="text-center mb-0"><strong> 5:42h </strong></p>
       <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
     </div>
   </div>
 </div>
 
-<p>Today you sleep in <%= @garden.name %> at <%= @garden.user.username %></p>
-
+<div class="card-garden">
+  <img src="" alt="">
+  <div class="card-garden-infos">
+    <h2>Today you sleep at</h2>
+    <p><%= @garden.user.username %>'s garden</p>
+    <p><%= @garden.name %></p>
+  </div>
+</div>
 
 <div>
-  <%= link_to "Start Ride", class: "btn primary-btn" %>
+  <%= link_to "Start Ride", segment_path(@segment), class: "btn primary-btn mb-2" %>
 </div>
