@@ -34,6 +34,8 @@ const initMapbox = () => {
         }
       });
 
+      console.log(directions);
+
       map.addControl(directions, "top-left");
 
       let finalDestination = mapElement.dataset.finalDestination
