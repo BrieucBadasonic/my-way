@@ -1,6 +1,7 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+  box-shadow: 5px 5px 3px black;
 }
 .avatar-large {
   width: 56px;
@@ -22,4 +23,12 @@
 .avatar-profile {
   width: 112px;
   border-radius: 50%;
+}
+
+.avatar-navbar {
+width: 40px;
+border-radius: 50%;
+box-shadow: 2px 2px 3px black;
+margin-top: 12px;
+margin-bottom: 4px;
 }
