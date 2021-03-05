@@ -27,11 +27,8 @@ class SegmentsController < ApplicationController
         name: @garden.name,
         description: @garden.description,
         facility: @garden.facilities.all
-      },
-      {
-        lat: 52.506872,
-        lng: 13.3913749,
-      }]
+      }
+      ]
   end
 
   def update
