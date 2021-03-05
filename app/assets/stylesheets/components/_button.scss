@@ -37,12 +37,13 @@
   transition: opacity 0.3s ease;
   font-weight: 700;
   position: absolute;
-  
+
   &-popup {
+    position: relative;
     padding: 2px 8px;
     width: 62%;
     font-size: 12px;
-    margin: 0px 0px 9px 7px;
+    margin: -17px 0px -1px 24px;
   }
 }
 

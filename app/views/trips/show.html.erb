@@ -6,7 +6,7 @@
   data-wagon-lat="<%= @wagonlat %>"
   data-wagon-lng="<%= @wagonlng %>"
   >
-</div>
+</div> 
 
 
 <div class="container">
@@ -21,23 +21,17 @@
   <div class="stats-container-distance"> <!--need to add class with displayflex -->
     <div class="distance"> <!--add info from api -->
       <i class="distance-icon-stats fas fa-route fa-2x"></i>
-      <p class="text-center mb-0"></p>
+      <p class="distance-insert text-center mb-0"></p>
       <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
     </div>
   </div>
 
-<!--   <div class="stats-container-elevation">
-    <div class="elevation">
-      <i class="icons-stats fas fa-arrow-up fa-2x"></i> <!--add info from api  -->
-   <!--    <p class="text-center mb-0"><strong> 345m </strong></p>
-      <p class="font-description mb-0"><strong>Elevation</strong></p> <!-- add calculation -->
-   <!--  </div>
-  </div> -->
+
 
   <div class="stats-container-duration">
     <div class="duration">
       <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
-      <p class="text-center mb-0"></p>
+      <p class="time-insert text-center mb-0"></p>
       <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
     </div>
   </div>
@@ -45,4 +39,6 @@
 
 <div>
   <%= link_to "Change final destination", new_trip_path, class: "btn primary-btn" %>
+</div>
+
 </div>
