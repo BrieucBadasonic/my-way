@@ -1,17 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="collapsable-sidebar">
-       
+
     <span class="navbar-toggler-icon" data-action="click->collapsable-sidebar#showSidebar"></span>
-  
+
   <%= link_to "#", class: "navbar-brand" do %>
-    <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %> 
+    <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
-  
+
   <div class="sidebar-nav collapsed"  data-collapsable-sidebar-target="sidebar">
     <% if user_signed_in? %>
-    
+
     <%= link_to "avatar", class: "navbar-brand" do %>
-      <div><%= image_tag "icons/santi-avatar.jpg", class: "avatar-navbar" %></div>
+      <!-- <div><%= image_tag "icons/santi-avatar.jpg", class: "avatar-navbar" %></div> -->
+      <div><%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %> </div>
       <div><p class="navbar-avatar">Profile</p></div>
     <% end %>
 
@@ -43,7 +44,7 @@
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
      <% else %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-  
+
   <% end %>
      </div>
   </div>

@@ -27,7 +27,7 @@ class TripsController < ApplicationController
         name: garden.name,
         description: garden.description,
         facility: garden.facilities.all,
-        infoWindow: render_to_string(partial: "info_window", locals: { garden: garden })
+        infoWindow: render_to_string(partial: "info_window", locals: { garden: garden }),
       }
     end
   end
@@ -37,19 +37,5 @@ class TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:final_destination)
   end
-
-  # def post_mapbox_api(coordinates)
-  #   res = HTTP.post(
-  #     "https://api.mapbox.com/matching/v5/mapbox/cycling?access_token=#{ENV["MAPBOX_API_KEY"]}",
-  #     form: {
-  #       coordinates: coordinates
-  #     }
-  #   )
-  #   body = res.body.readpartial
-    # raise
-    # return [disance, duration]
-  # end
 end
 
-
-# JSON.parse(body)["message"]

@@ -3,7 +3,9 @@ import "mapbox-gl/dist/mapbox-gl.css"; // Import module's CSS
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 
+// selecting the map element
 const mapElement = document.getElementById("map");
+// get the API key out of the map element
 mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
 const fitMapToMarkers = (map, markers) => {
@@ -14,10 +16,10 @@ const fitMapToMarkers = (map, markers) => {
 
 const updateStats = (distance, hours, minutes) => {
   const statsDistance = document.querySelector(".distance-insert")
-  statsDistance.insertAdjacentHTML("beforeend", `<strong>${distance.toFixed(1)} Km</strong>`)
+  statsDistance.innerText = `${distance.toFixed(1)} Km`;
 
   const statsTime = document.querySelector(".time-insert")
-  statsTime.insertAdjacentHTML("beforeend", `<strong>${hours}:${minutes}</strong>`)
+  statsTime.innerText = `${hours}H${minutes}`
 };
 
 const callApiToGetDistanceAndTime = (coordinates) => {
@@ -41,8 +43,10 @@ const callApiToGetDistanceAndTime = (coordinates) => {
 
       const hours    = Math.floor(seconds / (60*60));
             seconds -= hours   * (60*60);
-      const minutes  = Math.floor(seconds / (60));
+
+      let minutes  = Math.floor(seconds / (60));
             seconds -= minutes * (60);
+      minutes = minutes > 9 ? minutes : '0' + minutes;
 
       updateStats(distance, hours, minutes);
     })
@@ -50,9 +54,7 @@ const callApiToGetDistanceAndTime = (coordinates) => {
 
 const getGardenCoordOnClick = (map, wagonLat, wagonLng) => {
   map.on("click", (event) => {
-        // let coordinates = `parseFloat(${wagonLng}),parseFloat(${wagonLat});parseFloat(${event.lngLat["lng"]}),parseFloat(${event.lngLat["lat"]})`
         let coordinates = `coordinates=${wagonLng},${wagonLat};${event.lngLat["lng"]},${event.lngLat["lat"]}`
-        // let coordinates = wagonLng,wagonLat;event.lngLat["lng"],event.lngLat["lat"]
         callApiToGetDistanceAndTime(coordinates)
       });
 };
@@ -123,8 +125,6 @@ const initMapbox = () => {
       let wagonLat = mapElement.dataset.wagonLat
       let wagonLng = mapElement.dataset.wagonLng
       getGardenCoordOnClick(map, wagonLat, wagonLng);
-
-      // updateStats();
 
     });
   }
