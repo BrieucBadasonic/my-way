@@ -1,8 +1,10 @@
-<div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-markers="<%= @markers.to_json %>"
-  data-destination="<%= @segment.garden %>"
-  >
+<div class="mapbox-prison">
+  <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-markers="<%= @markers.to_json %>"
+    data-destination="<%= @segment.garden %>">
+  </div>
 </div>
+
 
 <div class="container">
   <div class=""> <!--need to add class -->
@@ -12,23 +14,23 @@
 <div class="stats-container">
   <div class="stats-container-distance"> <!--need to add class with displayflex -->
     <div class="distance"> <!--add info from api -->
-      <i class="distance-icon-stats fas fa-route fa-1x"></i>
+      <i class="distance-icon-stats fas fa-route fa-2x"></i>
       <p class="text-center mb-0"><strong> 4km </strong></p>
       <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
     </div>
   </div>
 
-  <div class="stats-container-elevation">
+<!--   <div class="stats-container-elevation">
     <div class="elevation">
       <i class="elevation-icon-stats fas fa-arrow-up fa-1x"></i> <!--add info from api  -->
-      <p class="text-center mb-0"><strong> 345m </strong></p>
+     <!--  <p class="text-center mb-0"><strong> 345m </strong></p>
       <p class="font-description mb-0"><strong>Elevation</strong></p> <!-- add calculation -->
-    </div>
-  </div>
+   <!--  </div>
+  </div> -->
 
   <div class="stats-container-duration">
     <div class="duration">
-      <i class="duration-icon-stats fas fa-stopwatch fa-1x"></i> <!--add info from api  -->
+      <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
       <p class="text-center mb-0"><strong> 5:42h </strong></p>
       <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
     </div>
@@ -36,12 +38,13 @@
 </div>
 
 <div class="card-garden">
-  <img src="" alt="">
+  <%= cl_image_tag(@garden.photo.key) %>
   <div class="card-garden-infos">
     <h2>Today you sleep at</h2>
     <p><%= @garden.user.username %>'s garden</p>
     <p><%= @garden.name %></p>
   </div>
+<!--   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-garden-user avatar-bordered" /> -->
 </div>
 
 <div>

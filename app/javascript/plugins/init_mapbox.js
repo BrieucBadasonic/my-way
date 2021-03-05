@@ -80,6 +80,7 @@ const initMapbox = () => {
           profileSwitcher: false
         }
       });
+      map.resize();
 
       console.log(directions);
 
