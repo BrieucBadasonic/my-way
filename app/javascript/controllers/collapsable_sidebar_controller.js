@@ -8,6 +8,6 @@ export default class extends Controller {
   }
 
   showSidebar() {
-    this.sidebarTarget.classList.toggle("collapsed");
+    this.sidebarTarget.classList.toggle("open");
   }
 }
