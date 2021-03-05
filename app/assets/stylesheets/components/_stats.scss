@@ -1,43 +1,43 @@
-.stats-container-elevation {
-  font-size: 14px;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(147, 159, 92, 0.5);
-  padding: 12px;
-  border-radius: 5px;
-  // box-shadow: 0 8px 16px 0 rgba(147, 159, 92, 0.5), 0 6px 20px 0 rgba(147, 159, 92, 0.5);
-}
+// .stats-container-elevation {
+//   font-size: 14px;
+//   width: 80px;
+//   height: 80px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: rgba(147, 159, 92, 0.5);
+//   padding: 12px;
+//   border-radius: 5px;
+//   // box-shadow: 0 8px 16px 0 rgba(147, 159, 92, 0.5), 0 6px 20px 0 rgba(147, 159, 92, 0.5);
+// }
 
 .stats-container-distance {
   font-size: 14px;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: rgba(216, 142, 86, 0.5);
   border-radius: 5px;
-  padding: 12px;
+  padding: 10px;
   align-items: center;
   // box-shadow: 0 8px 16px 0 rgba(216, 142, 86, 0.5), 0 6px 20px 0 rgba(216, 142, 86, 0.5);
 }
 
 .stats-container-duration {
   font-size: 14px;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgba(229, 180, 142, 0.5);
+  background-color: rgba(147, 159, 92, 0.5);
   border-radius: 5px;
   padding: 12px;
   align-items: center;
-  // box-shadow: 0 8px 16px 0 rgba(229, 180, 142, 0.5), 0 6px 20px 0 rgba(229, 180, 142, 0.5);
+  // box-shadow: 0 8px 16px 0 rgba(147, 159, 92, 0.5), 0 6px 20px 0 rgba(229, 180, 142, 0.5);
 }
 
 .stats-container {
@@ -47,19 +47,19 @@
 }
 
 .font-description {
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.elevation-icon-stats {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  opacity: 0.9;
-  background-color: rgba(147, 159, 92, 0.8);
-  border-radius: 5px;
-  padding: 4px;
-  width: 30px;
-}
+// .elevation-icon-stats {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 10px;
+//   opacity: 0.9;
+//   background-color: rgba(147, 159, 92, 0.8);
+//   border-radius: 5px;
+//   padding: 4px;
+//   width: 30px;
+// }
 
 .distance-icon-stats {
   display: flex;
@@ -69,7 +69,7 @@
   background-color: rgba(216, 142, 86, 0.8);
   border-radius: 5px;
   padding: 4px;
-  width: 30px;
+  // width: 40px;
 }
 
 .duration-icon-stats {
@@ -77,9 +77,9 @@
   justify-content: center;
   margin-bottom: 10px;
   opacity: 0.9;
-  background-color: rgba(229, 180, 142, 0.8);
+  background-color: rgba(147, 159, 92, 0.8);
   border-radius: 5px;
   padding: 4px;
-  width: 30px;
+  // width: 40px;
 }
 

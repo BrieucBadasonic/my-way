@@ -67,9 +67,10 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v10",
+      zoom: 11
     });
 
-    map.on("load", function () {
+    map.on("load", function (x) {
       const directions = new MapboxDirections({
         accessToken: mapboxgl.accessToken,
         unit: "metric",
@@ -81,51 +82,69 @@ const initMapbox = () => {
         }
       });
 
-      console.log(directions);
+      navigator.geolocation.getCurrentPosition((pos) => {
+      let currentLocation = pos.coords
+      directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
+
+
+    }, (error) => {
+        console.log("this is an error")
+      }
+    );
 
       map.addControl(directions, "top-left");
 
-      let finalDestination = mapElement.dataset.finalDestination
+      let finalDestination  = mapElement.dataset.finalDestination
       if (finalDestination) {
-        directions.setOrigin("Rudi-Dutschke-Straße 26, 10969 Berlin");
-        directions.setDestination(finalDestination);
+        let query = window.location.search
+
+        navigator.geolocation.getCurrentPosition((pos) => {
+          let currentLocation = pos.coords
+          directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
+          directions.setDestination(finalDestination);
+          console.log(currentLocation)
+        }, (error) => {
+
+        });
       };
 
-      const markers = JSON.parse(mapElement.dataset.markers);
-      markers.forEach((marker) => {
-        new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
-      });
+      if (mapElement.dataset.setMarkers === "true") {
+        console.log("I m here")
+        const markers = JSON.parse(mapElement.dataset.markers);
+        markers.forEach((marker) => {
+          new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+        });
 
-      markers.forEach((marker) => {
-        var popupOffsets = {
-          'top': [0, 0],
-          'left': [-300],
-        };
+        markers.forEach((marker) => {
+          var popupOffsets = {
+            'top': [0, 0],
+            'left': [-300],
+          };
 
-        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+          const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-        // Create a HTML element for your custom marker
-        const element = document.createElement('div');
-        // element.className = 'marker';
-        element.style.backgroundImage = `url('${marker.image_url}')`;
-        element.style.backgroundSize = 'contain';
-        element.style.width = '25px';
-        element.style.height = '25px';
+          // Create a HTML element for your custom marker
+          const element = document.createElement('div');
+          // element.className = 'marker';
+          element.style.backgroundImage = `url('${marker.image_url}')`;
+          element.style.backgroundSize = 'contain';
+          element.style.width = '25px';
+          element.style.height = '25px';
 
 
-        // Pass the element as an argument to the new marker
-        new mapboxgl.Marker(element)
-          .setLngLat([marker.lng, marker.lat])
-          .setPopup(popup)
-          .addTo(map);
-      });
+          // Pass the element as an argument to the new marker
+          new mapboxgl.Marker(element)
+            .setLngLat([marker.lng, marker.lat])
+            .setPopup(popup)
+            .addTo(map);
+        });
 
-      fitMapToMarkers(map, markers);
+        fitMapToMarkers(map, markers);
 
-      let wagonLat = mapElement.dataset.wagonLat
-      let wagonLng = mapElement.dataset.wagonLng
-      getGardenCoordOnClick(map, wagonLat, wagonLng);
-
+        let wagonLat = mapElement.dataset.wagonLat
+        let wagonLng = mapElement.dataset.wagonLng
+        getGardenCoordOnClick(map, wagonLat, wagonLng);
+      }
     });
   }
 };

@@ -1,10 +1,12 @@
-<div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>" >  <!-- map container class? -->
+<div id="map" data-set-markers="false"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+data-markers="<%= @markers.to_json %>" >  <!-- map container class? -->
   <!--This is for the map -->
 </div>
 
 <div class="container">
-  <div class="title text-center"> <!--need to add class -->
-    <h1><strong>Plan Your Trip</strong></h1>
+  <div class="text-center"> <!--need to add class -->
+    <h1 class="title"><strong>Plan Your Trip</strong></h1>
   </div>
 
 <!--   <div class="", style="margin-bottom: 30px"> need to add class ?
@@ -16,7 +18,7 @@
     <%= simple_form_for @trip do |f| %>
     <%= f.input :final_destination, placeholder: 'Where do you want your bike to take you?'%>
     <%#= f.input :photo, as: :file %>
-    <%= f.submit "Start Trip", class: "btn primary-btn" %>
+    <%= f.submit "Start Trip", class: "btn primary-btn mt-0" %>
     <% end %>
   </div>
 </div>
