@@ -81,9 +81,11 @@ const initMapbox = () => {
           profileSwitcher: false
         }
       });
-    navigator.geolocation.getCurrentPosition((pos) => {
+
+      navigator.geolocation.getCurrentPosition((pos) => {
       let currentLocation = pos.coords
       directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
+
 
     }, (error) => {
         console.log("this is an error")
