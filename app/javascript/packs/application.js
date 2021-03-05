@@ -26,6 +26,8 @@ require("channels")
 import "bootstrap";
 import { initMapbox }       from "../plugins/init_mapbox.js";
 import { initAutocomplete } from "../plugins/init_autocomplete.js";
+import { finishrideButton } from "../plugins/finishride_button";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,6 +35,9 @@ import { initAutocomplete } from "../plugins/init_autocomplete.js";
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  finishrideButton();
 });
 
 import "controllers"
+
+
