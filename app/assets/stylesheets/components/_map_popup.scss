@@ -9,10 +9,17 @@
   border-color: transparent;
 }
 
-.banana .mapboxgl-popup {
-  background-color: #96BB7C
-}
 
 .popup {
-  background-color: #96BB7C
+  // background-color: #96BB7C;
+  flex-direction: column
+  // border-radius: 4px;
 }
+
+.container {
+  flex-direction: column
+}
+
+// .mapboxgl-popup-content {
+//   border-radius: 4px;
+// }

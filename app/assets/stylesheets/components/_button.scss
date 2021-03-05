@@ -37,6 +37,13 @@
   transition: opacity 0.3s ease;
   font-weight: 700;
   position: absolute;
+  
+  &-popup {
+    padding: 2px 8px;
+    width: 62%;
+    font-size: 12px;
+    margin: 0px 0px 9px 7px;
+  }
 }
 
 .primary-btn:hover {
@@ -65,3 +72,7 @@
   text-decoration: none;
   opacity: 0.9;
 }
+
+
+
+
