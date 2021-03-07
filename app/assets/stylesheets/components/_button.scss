@@ -10,7 +10,7 @@
   opacity: 0.8;
   box-shadow: 0 8px 16px 0 rgba(49, 55, 21, 0.5), 0 6px 20px 0 rgba(49, 55, 21, 0.5);
   bottom: 0px;
-  margin-bottom: 90px;
+  margin-bottom: 409px;
   margin-top: 20px;
   transition: opacity 0.3s ease;
   font-weight: 700;
@@ -20,6 +20,10 @@
 .primary-btn-landing:hover {
   text-decoration: none;
   opacity: 0.9;
+}
+
+.secondary-btn-landing {
+  margin-bottom: 347px !important;
 }
 
 .primary-btn {

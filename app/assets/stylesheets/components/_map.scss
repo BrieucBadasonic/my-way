@@ -1,9 +1,7 @@
 #map {
-  width: 100%;
-  height: 50vh;
-  z-index: 0;
-  display: flex;
-  position: inherit;
+  // z-index: 0;
+  // display: flex;
+  // position: fixed;
 }
 
 // #map::before {
@@ -18,3 +16,7 @@
 //   height: 300px;
 //   max-height: 300px;
 // }
+.mapbox-logo{ display: none; }
+.mapboxgl-ctrl-logo { display: none !important; }
+.mapbox-improve-map { display: none; }
+.mapboxgl-ctrl-compass { display: none; }
