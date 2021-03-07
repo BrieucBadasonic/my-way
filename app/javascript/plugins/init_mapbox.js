@@ -6,7 +6,9 @@ import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 // selecting the map element
 const mapElement = document.getElementById("map");
 // get the API key out of the map element
-mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+if (mapElement) {
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+};
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -50,28 +52,31 @@ const callApiToGetDistanceAndTime = (coordinates) => {
 
       updateStats(distance, hours, minutes);
     })
-  };
+};
 
 const getGardenCoordOnClick = (map, origin) => {
   map.on("click", (event) => {
         let coordinates = `coordinates=${origin.lng},${origin.lat};${event.lngLat["lng"]},${event.lngLat["lat"]}`
         callApiToGetDistanceAndTime(coordinates)
-      });
+  });
 };
 
+
 const initMapbox = () => {
-
-
+console.log("initializing")
   if (mapElement) {
+console.log("create map")
     // only build a map if there's a div#map to inject into
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v10",
+      // center: [13.404954, 52.520008],
       zoom: 15,
       // attributionControl: false,
     });
 
-    map.on("load", function (x) {
+    map.on("load", function () {
+console.log("load")
       const directions = new MapboxDirections({
         accessToken: mapboxgl.accessToken,
         unit: "metric",
@@ -83,15 +88,16 @@ const initMapbox = () => {
         }
       });
 
+      map.addControl(directions, "top-left");
       // check on which view we are
       const view = mapElement.dataset.view
 
-      // get current user position
-
 
       if (view === "trip-new") {
+console.log("trip#new")
         navigator.geolocation.getCurrentPosition((pos) => {
           let currentLocation = pos.coords
+console.log(currentLocation)
           directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
 
           const formStartLatitude = document.getElementById("trip_start_location_latitude")
@@ -102,13 +108,12 @@ const initMapbox = () => {
 
         }, (error) => {
           console.log("this is an error")
-          }
-      );
+        });
       }
 
-      map.addControl(directions, "top-left");
 
       if (view === "trip-show") {
+console.log("trip#show")
         let origin = JSON.parse(mapElement.dataset.origin)
         let destination  = JSON.parse(mapElement.dataset.destination)
         if (origin || destination) {
@@ -119,10 +124,10 @@ const initMapbox = () => {
       }
 
       if (view === "segment-show") {
+console.log("segment#show")
         let origin = JSON.parse(mapElement.dataset.origin)
-        console.log(origin)
         let destination  = JSON.parse(mapElement.dataset.destination)
-        console.log(destination)
+
         if (origin || destination) {
             directions.setOrigin([origin.lng, origin.lat]);
             directions.setDestination([destination.lng, destination.lat]);
@@ -133,6 +138,7 @@ const initMapbox = () => {
 
 
       if (mapElement.dataset.setMarkers === "true") {
+console.log("set markers")
         const markers = JSON.parse(mapElement.dataset.markers);
         markers.forEach((marker) => {
           new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
@@ -163,7 +169,7 @@ const initMapbox = () => {
             .addTo(map);
         });
 
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
 
 
@@ -171,6 +177,7 @@ const initMapbox = () => {
       }
     });
   }
+console.log("loaded")
 };
 
 export { initMapbox }; // ES6 module export
