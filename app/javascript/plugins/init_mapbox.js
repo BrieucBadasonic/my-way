@@ -67,8 +67,11 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v10",
-      zoom: 11
+      zoom: 15,
+      // attributionControl: false,
     });
+
+
 
     map.on("load", function (x) {
       const directions = new MapboxDirections({
@@ -144,6 +147,7 @@ const initMapbox = () => {
         let wagonLat = mapElement.dataset.wagonLat
         let wagonLng = mapElement.dataset.wagonLng
         getGardenCoordOnClick(map, wagonLat, wagonLng);
+
       }
     });
   }
