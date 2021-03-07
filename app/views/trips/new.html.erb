@@ -19,8 +19,8 @@
   <div class="text-center mt-3">
     <%= simple_form_for @trip do |f| %>
     <%= f.input :final_destination, label: false, placeholder: 'Where do you want your bike to take you?'%>
-    <%#= f.input :photo, as: :file %>
 
+    <%= f.input :start_location_latitude, as: :hidden %>
     <%= f.input :start_location_longitude, as: :hidden %>
     <%= f.submit "Start Trip", class: "btn primary-btn mt-2" %>
     <% end %>
