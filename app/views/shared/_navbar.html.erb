@@ -4,7 +4,7 @@
      <% if user_signed_in? %>
 
 
-    <%= link_to "avatar", class: "navbar-brand" do %>
+    <%= link_to users_path, class: "navbar-brand" do %>
       <div><%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %></div>
       <div><p class="navbar-avatar">Profile</p></div>
     <% end %>

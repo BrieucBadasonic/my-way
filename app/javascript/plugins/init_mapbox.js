@@ -52,16 +52,16 @@ const callApiToGetDistanceAndTime = (coordinates) => {
     })
   };
 
-const getGardenCoordOnClick = (map, wagonLat, wagonLng) => {
+const getGardenCoordOnClick = (map, origin) => {
   map.on("click", (event) => {
-        let coordinates = `coordinates=${wagonLng},${wagonLat};${event.lngLat["lng"]},${event.lngLat["lat"]}`
+        let coordinates = `coordinates=${origin.lng},${origin.lat};${event.lngLat["lng"]},${event.lngLat["lat"]}`
         callApiToGetDistanceAndTime(coordinates)
       });
 };
 
 const initMapbox = () => {
 
-  // ALWAYS check if selector selected
+
   if (mapElement) {
     // only build a map if there's a div#map to inject into
     const map = new mapboxgl.Map({
@@ -70,8 +70,6 @@ const initMapbox = () => {
       zoom: 15,
       // attributionControl: false,
     });
-
-
 
     map.on("load", function (x) {
       const directions = new MapboxDirections({
@@ -85,38 +83,61 @@ const initMapbox = () => {
         }
       });
 
-      navigator.geolocation.getCurrentPosition((pos) => {
-      let currentLocation = pos.coords
-      directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
+      // check on which view we are
+      const view = mapElement.dataset.view
+
+      // get current user position
 
 
-    }, (error) => {
-        console.log("this is an error")
-      }
-    );
-
-      map.addControl(directions, "top-left");
-
-      let finalDestination  = mapElement.dataset.finalDestination
-      if (finalDestination) {
-        let query = window.location.search
-
+      if (view === "trip-new") {
         navigator.geolocation.getCurrentPosition((pos) => {
           let currentLocation = pos.coords
           directions.setOrigin([currentLocation.longitude, currentLocation.latitude]);
-          directions.setDestination(finalDestination);
-          console.log(currentLocation)
-        }, (error) => {
 
-        });
+          const formStartLatitude = document.getElementById("trip_start_location_latitude")
+          formStartLatitude.value = currentLocation.latitude
+
+          const formStartLongitude = document.getElementById("trip_start_location_longitude")
+          formStartLongitude.value = currentLocation.longitude
+
+        }, (error) => {
+          console.log("this is an error")
+          }
+      );
+      }
+
+      map.addControl(directions, "top-left");
+
+      if (view === "trip-show") {
+        let origin = JSON.parse(mapElement.dataset.origin)
+        let destination  = JSON.parse(mapElement.dataset.destination)
+        if (origin || destination) {
+            directions.setOrigin([origin.lng, origin.lat]);
+            directions.setDestination([destination.lng, destination.lat]);
+            getGardenCoordOnClick(map, origin);
+        };
+      }
+
+      if (view === "segment-show") {
+        let origin = JSON.parse(mapElement.dataset.origin)
+        console.log(origin)
+        let destination  = JSON.parse(mapElement.dataset.destination)
+        console.log(destination)
+        if (origin || destination) {
+            directions.setOrigin([origin.lng, origin.lat]);
+            directions.setDestination([destination.lng, destination.lat]);
+            let coordinates = `coordinates=${origin.lng},${origin.lat};${destination.lng},${destination.lat}`
+            callApiToGetDistanceAndTime(coordinates)
+         }
       };
 
+
       if (mapElement.dataset.setMarkers === "true") {
-        console.log("I m here")
         const markers = JSON.parse(mapElement.dataset.markers);
         markers.forEach((marker) => {
           new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
         });
+
 
         markers.forEach((marker) => {
           var popupOffsets = {
@@ -144,9 +165,8 @@ const initMapbox = () => {
 
         fitMapToMarkers(map, markers);
 
-        let wagonLat = mapElement.dataset.wagonLat
-        let wagonLng = mapElement.dataset.wagonLng
-        getGardenCoordOnClick(map, wagonLat, wagonLng);
+
+
 
       }
     });

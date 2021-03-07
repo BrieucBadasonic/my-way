@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   resources :gardens, only: [ :index]
 
   resources :trips, only: [ :create, :new, :show ] do
-    resources :segments, only: [ :create ]
+    resources :segments, only: [ :create, :show ]
   end
 
-  resources :segments, only: [ :show ]
- 
+  # resources :segments, only: [ :show ]
+
   resources :users, only: [ :index ]
 
   devise_for :users
