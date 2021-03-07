@@ -87,16 +87,22 @@ ActiveRecord::Schema.define(version: 2021_03_04_143057) do
     t.bigint "garden_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "latitude"
-    t.float "longitude"
+    t.float "destination_latitude"
+    t.float "destination_longitude"
+    t.string "start"
+    t.float "start_latitude"
+    t.float "start_longitude"
     t.index ["garden_id"], name: "index_segments_on_garden_id"
     t.index ["trip_id"], name: "index_segments_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
+    t.string "start_location"
+    t.float "start_location_latitude"
+    t.float "start_location_longitude"
     t.string "final_destination"
-    t.float "latitude"
-    t.float "longitude"
+    t.float "final_destination_latitude"
+    t.float "final_destination_longitude"
     t.float "total_distance"
     t.float "total_elevation"
     t.date "start_date"

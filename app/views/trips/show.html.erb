@@ -1,11 +1,11 @@
 <div id="map"
   style="width: 100%; height: 60vh;"
   data-set-markers="true"
+  data-view="trip-show"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   data-markers="<%= @markers.to_json %>"
-  data-final-destination="<%= @trip.final_destination %>"
-  data-wagon-lat="<%= @wagonlat %>"
-  data-wagon-lng="<%= @wagonlng %>"
+  data-origin="<%= @origin.to_json %>"
+  data-destination="<%= @destination.to_json %>"
   >
 </div>
 
