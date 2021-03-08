@@ -10,6 +10,14 @@ if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 };
 
+const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v10",
+      // center: [13.404954, 52.520008],
+      zoom: 15,
+      // attributionControl: false,
+    });
+
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
@@ -63,17 +71,11 @@ const getGardenCoordOnClick = (map, origin) => {
 
 
 const initMapbox = () => {
-console.log("initializing")
+console.log(map)
   if (mapElement) {
 console.log("create map")
     // only build a map if there's a div#map to inject into
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v10",
-      // center: [13.404954, 52.520008],
-      zoom: 15,
-      // attributionControl: false,
-    });
+
 
     map.on("load", function () {
 console.log("load")
@@ -181,3 +183,4 @@ console.log("loaded")
 };
 
 export { initMapbox }; // ES6 module export
+export { map };

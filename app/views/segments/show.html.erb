@@ -1,51 +1,74 @@
-<div class="mapbox-prison">
-  <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    style="width: 100%; height: 50vh;"
-    data-view="segment-show"
-    data-origin="<%= @origin.to_json %>"
-    data-destination="<%= @destination.to_json %>"
-    >
-  </div>
-</div>
-
-
-<div class="container">
-  <div class=""> <!--need to add class -->
-    <h1 class="title mb-2"><strong>Details of todays ride</strong></h1>
-  </div>
-
-<div class="stats-container">
-  <div class="stats-container-distance"> <!--need to add class with displayflex -->
-    <div class="distance"> <!--add info from api -->
-      <i class="distance-icon-stats fas fa-route fa-2x"></i>
-      <p class="distance-insert text-center mb-0"></p>
-      <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
+<div class="page-content" data-controller="collapsable-segments-overview">
+  <div class="mapbox-prison">
+    <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      style="width: 100%; height: 50vh;"
+      data-view="segment-show"
+      data-origin="<%= @origin.to_json %>"
+      data-destination="<%= @destination.to_json %>"
+      data-collapsable-segments-overview-target="segmentmap"
+      >
     </div>
   </div>
 
-<!--   <div class="stats-container-elevation">
-    <div class="elevation">
-      <i class="elevation-icon-stats fas fa-arrow-up fa-1x"></i> <!--add info from api  -->
-     <!--  <p class="text-center mb-0"><strong> 345m </strong></p>
-      <p class="font-description mb-0"><strong>Elevation</strong></p> <!-- add calculation -->
-   <!--  </div>
-  </div> -->
+  <div class="segment-container">
+    <div class="container">
+      <i class="fas fa-chevron-down mt-2 text-center"
+         data-action="click->collapsable-segments-overview#collapsabledown"
+         data-action="click->collapsable-segments-overview#collapsableup"
+         data-collapsable-segments-overview-target="icon"></i>
+    </div>
+    <div class="segment-overview"
+         data-collapsable-segments-overview-target="segmentcontainer">
+      <div class="container">
+        <div class=""> <!--need to add class -->
+          <h1 class="title title-segment"><strong>Details of todays ride</strong></h1>
+        </div>
 
-  <div class="stats-container-duration">
-    <div class="duration">
-      <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
-      <p class="time-insert text-center mb-0"></p>
-      <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
+        <div class="stats-container">
+          <div class="stats-container-distance"> <!--need to add class with displayflex -->
+            <div class="distance"> <!--add info from api -->
+              <i class="distance-icon-stats fas fa-route fa-2x"></i>
+              <p class="distance-insert text-center mb-0"></p>
+              <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
+            </div>
+          </div>
+
+          <div class="stats-container-duration">
+            <div class="duration">
+              <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
+              <p class="time-insert text-center mb-0"></p>
+              <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card-garden">
+          <%= cl_image_tag(@garden.photo.key) %>
+          <div class="card-garden-avatar">
+            <%= cl_image_tag @garden.user.photo.key, class: "avatar-segment" %>
+          </div>
+          <div class="card-garden-infos">
+            <h2>Today you sleep at <%= @garden.user.username %>'s garden</h2>
+            <p><%= @garden.name %></p>
+            <p><%= @garden.address %> </p>
+            <div><%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
+              <%= f.input :trip, as: :hidden, input_html: { value: @trip.id } %>
+              <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
+              <%= hidden_field_tag :segment_id, @segment.id %>
+              <%= f.button :submit, "Leave review" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <%= link_to "plan next day", trip_path(@trip), data: {turbolinks: "false"}, class: "btn primary-btn mb-2" %>          
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="card-garden">
-  <%= cl_image_tag(@garden.photo.key) %>
-  <div class="card-garden-infos">
-    <h2>Today you sleep at</h2>
-    <p><%= @garden.user.username %>'s garden</p>
-    <p><%= @garden.name %></p>
     <div><%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
       <%= f.input :trip, as: :hidden, input_html: { value: @trip.id } %>
       <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
@@ -53,9 +76,4 @@
       <%= f.button :submit, "Leave review" %>
       <% end %>
     </div>
-  </div>
-<!--   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-garden-user avatar-bordered" /> -->
-</div>
-<div>
-  <%= link_to "plan next day", trip_path(@trip), data: {turbolinks: "false"}, class: "btn primary-btn mb-2" %>
-</div>
+ 

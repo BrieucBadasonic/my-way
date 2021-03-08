@@ -1,7 +1,27 @@
-<%= @garden.name %>
+<div class="container">
+  <div class="card-garden">
+    <%= cl_image_tag @garden.photo.key, width: 1140, height: 400, class: "img-garden", crop: :fill %>
+  </div>
+  <div>
+    <h2><%= @garden.name %></h2>
+    <p><% @facilities.each do |facility| %>
+       <div><%= facility.name %></div>
+       <% end %></p>
+  </div>
+  <div class="garden-description">
+    <p><%= @garden.description %></p>
+  </div>
+  <% if @trip %>
+    <div>  <%= simple_form_for [@trip, @segment] do |f| %>
+        <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
+        <%= f.input :destination, as: :hidden, input_html: { value: @garden.address } %>
+        <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-view-page-buttons" %>
+        <% end %>
+    </div>
+  <% end %>
 
+  <div>
+    <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
+    </div>
+</div>
 
-
-
-
-<%= link_to "Leave a review", new_garden_review_path(@garden) %>

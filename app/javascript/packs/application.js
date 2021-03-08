@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox }       from "../plugins/init_mapbox.js";
+
 import { initAutocomplete } from "../plugins/init_autocomplete.js";
 // import { finishrideButton } from "../plugins/finishride_button";
 

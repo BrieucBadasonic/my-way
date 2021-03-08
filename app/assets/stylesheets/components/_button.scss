@@ -42,14 +42,33 @@
   font-weight: 700;
   position: absolute;
 
-  &-popup {
+  &-popup-select {
     position: relative;
     padding: 2px 8px;
-    width: 62%;
+    width: 112%;
     font-size: 12px;
-    margin: -17px 0px -1px 24px;
+    margin-bottom: 16;
   }
+
+  &-popup-view {
+    position: relative;
+    padding: 2px 8px;
+    width: 40%;
+    font-size: 12px;
+    margin-bottom: 16;;
+  }
+
+  &-view-page-buttons {
+    position: relative;
+    padding: 2px 8px;
+    width: 40%;
+    font-size: 12px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
 }
+
 
 .primary-btn:hover {
   text-decoration: none;
