@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox }       from "../plugins/init_mapbox.js";
+// import { initMap }          from "../plugins/map_segment_show.js";
 import { initAutocomplete } from "../plugins/init_autocomplete.js";
 // import { finishrideButton } from "../plugins/finishride_button";
 
@@ -34,6 +35,7 @@ import { initAutocomplete } from "../plugins/init_autocomplete.js";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  // initMap();
   initAutocomplete();
   // finishrideButton();
 });

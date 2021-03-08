@@ -1,3 +1,21 @@
+.closed {
+  display: none;
+  height: 0;
+}
+
+.segment-container {
+  height: 50vh;
+}
+
+// .map-segment {
+//   height: 50vh;
+//   width: 100%;
+// }
+
+.full-height {
+  height: 100vh !important;
+}
+
 .card-garden {
   overflow: hidden;
   height: 120px;
