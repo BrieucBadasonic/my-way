@@ -1,6 +1,7 @@
 class Garden < ApplicationRecord
   belongs_to :user
   has_many :garden_facilities
+  has_many :segments
   has_many :trips, through: :segments
   has_many :facilities, through: :garden_facilities
   has_many :reviews, dependent: :destroy
@@ -11,5 +12,4 @@ class Garden < ApplicationRecord
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
 end

@@ -46,10 +46,16 @@
     <h2>Today you sleep at</h2>
     <p><%= @garden.user.username %>'s garden</p>
     <p><%= @garden.name %></p>
+    <div><%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
+      <%= f.input :trip, as: :hidden, input_html: { value: @trip.id } %>
+      <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
+      <%= hidden_field_tag :segment_id, @segment.id %>
+      <%= f.button :submit, "Leave review" %>
+      <% end %>
+    </div>
   </div>
 <!--   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-garden-user avatar-bordered" /> -->
 </div>
-
 <div>
   <%= link_to "plan next day", trip_path(@trip), data: {turbolinks: "false"}, class: "btn primary-btn mb-2" %>
 </div>

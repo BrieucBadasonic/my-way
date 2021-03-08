@@ -1,6 +1,7 @@
 class Segment < ApplicationRecord
   belongs_to :trip
   belongs_to :garden
+  has_one :review
 
   validates :destination, presence: true
   geocoded_by :destination,
