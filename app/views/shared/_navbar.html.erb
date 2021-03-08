@@ -6,8 +6,8 @@
     <%= link_to "avatar", class: "navbar-brand" do %>
       <% if current_user.photo.attached? %>
         <div><%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %>
-      <% end %>
       </div>
+      <% end %>
 
       <div><p class="navbar-avatar">Profile</p></div>
     <% end %>

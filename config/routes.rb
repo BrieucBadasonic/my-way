@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :gardens, only: [ :index]
+  resources :gardens, only: [ :index, :show ]
 
   resources :trips, only: [ :create, :new, :show ] do
     resources :segments, only: [ :create, :show ]
