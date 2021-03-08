@@ -11,7 +11,7 @@
       <%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
       <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-popup-select" %>
       <% end %>
-      <%= link_to "View", garden_path(garden), class: "btn primary-btn primary-btn-popup-view" %>
+      <%= link_to "View", garden_path(garden, trip: @trip.id), class: "btn primary-btn primary-btn-popup-view" %>
     </div>
   </div>
 
