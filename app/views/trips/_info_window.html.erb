@@ -9,11 +9,13 @@
     <div>  <%= simple_form_for [@trip, @segment] do |f| %>
       <%= f.association :garden, as: :hidden, input_html: { value: garden.id } %>
       <%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
-      <%= f.input :start_latitude, as: :hidden %>
-      <%= f.input :start_longitude, as: :hidden %>
       <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-popup" %>
       <% end %>
     </div>
+    <div>
+      <%= link_to "View", garden_path(garden), class: "btn primary-btn" %>
+    </div>
+
   </div>
 
 </div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :gardens, only: [ :index ] do
+  resources :gardens, only: [ :index, :show ] do
     resources :reviews, only: [ :new, :create ]
   end
 
