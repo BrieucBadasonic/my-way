@@ -21,7 +21,7 @@
          data-collapsable-segments-overview-target="segmentcontainer">
       <div class="container">
         <div class=""> <!--need to add class -->
-          <h1 class="title mb-2"><strong>Details of todays ride</strong></h1>
+          <h1 class="title title-segment"><strong>Details of todays ride</strong></h1>
         </div>
 
         <div class="stats-container">
@@ -44,12 +44,14 @@
 
         <div class="card-garden">
           <%= cl_image_tag(@garden.photo.key) %>
-          <div class="card-garden-infos">
-            <h2>Today you sleep at</h2>
-            <p><%= @garden.user.username %>'s garden</p>
-            <p><%= @garden.name %></p>
+          <div class="card-garden-avatar">
+            <%= cl_image_tag @garden.user.photo.key, class: "avatar-segment" %>
           </div>
-        <!--   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-garden-user avatar-bordered" /> -->
+          <div class="card-garden-infos">
+            <h2>Today you sleep at <%= @garden.user.username %>'s garden</h2>
+            <p><%= @garden.name %></p>
+            <p><%= @garden.address %> </p>
+          </div>
         </div>
 
         <div>
