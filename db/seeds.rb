@@ -358,7 +358,7 @@ garden10.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 puts "10/20"
 
 garden11 = Garden.new(name: "Cherry tree Garden",
-                   description: "The garden in the backyard of our home. Behind the garden is a wei with some old cherry and pear trees.",
+                   description: "The garden is in the backyard of our house. Behind the garden, there is some old cherry and pear trees.",
                    address: "Damsdorf 15938 Steinreich",
                    tent_capacity: 3,
                    user: user12)
