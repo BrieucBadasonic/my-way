@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
 before_action :find_garden, only: [ :new, :create ]
 
 def new
@@ -17,6 +18,11 @@ def create
   end
 end
 
+def destroy
+    @review = Review.find(params[:id])
+    @reviews.destroy
+end
+
 private
 
 def review_params
@@ -29,3 +35,4 @@ def find_garden
 end
 
 end
+
