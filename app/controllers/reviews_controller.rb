@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 before_action :find_garden, only: [ :new, :create ]
 
 def new
+  @garden = Garden.find(params[:garden_id])
   @review = Review.new
 end
 

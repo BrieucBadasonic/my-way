@@ -1,7 +1,17 @@
-<div class="container-review-new">
-  <%= simple_form_for [ @garden, @review ] do |f| %>
-    <%= f.input :rating, collection: 1..5, label: "Give the garden 1-5 stars!" %>
-    <%= f.input :description, label: "Leave a review for your host here:" %>
-    <%= f.submit "Submit review", class: "btn primary-btn" %>
-  <% end %>
+<div class="container">
+  <div class="container-review-info">
+    <%= cl_image_tag(@garden.photo.key) %>
+
+    <h2><%= @garden.name %></h2>
+    <p><%= @garden.user.username %></p>
+
+  </div>
+
+  <div class="container-review-new">
+    <%= simple_form_for [ @garden, @review ] do |f| %>
+      <%= f.input :rating, collection: 1..5, label: "Give the garden of #{@garden.user.username} 1-5 ⭐!" %>
+      <%= f.input :description, label: "Leave a review for your host here:" %>
+      <%= f.submit "Submit review", class: "btn primary-btn-review" %>
+    <% end %>
+  </div>
 </div>
