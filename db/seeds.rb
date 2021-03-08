@@ -8,8 +8,8 @@
 require "open-uri"
 
 puts "Cleaning DB..."
-User.destroy_all
 Garden.destroy_all
+User.destroy_all
 
 puts "Creating 21 users..."
 
