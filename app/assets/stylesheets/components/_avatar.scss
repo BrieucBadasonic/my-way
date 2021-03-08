@@ -26,18 +26,19 @@
 }
 
 .avatar-navbar {
-width: 40px;
-border-radius: 50%;
-box-shadow: 2px 2px 3px black;
-margin-top: 12px;
-margin-bottom: 4px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 12px;
+  margin-bottom: 4px;
 }
 
 .avatar-segment {
   width: 40px;
   border-radius: 50%;
   position: absolute;
-  bottom: 142px;
-  left: 132px;
+  bottom: 65px;
+  // margin-bottom: 50px;
+  left: 140px;
   border: white 1px solid;
 }
