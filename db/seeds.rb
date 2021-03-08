@@ -8,8 +8,10 @@
 require "open-uri"
 
 puts "Cleaning DB..."
-Garden.destroy_all
 User.destroy_all
+Facility.destroy_all
+GardenFacility.destroy_all
+Garden.destroy_all
 
 puts "Creating 21 users..."
 
@@ -482,13 +484,11 @@ facilities = [shower, toilet, bbq, bonfire, electricity, water, wifi, pet_allowe
 puts "Assign a random amount of facility to gardens"
 
 Garden.all.each do |garden|
-   rand(1..10).times do
-      facility_samp = facilities.sample
-      unless garden.facilities.include?(facility_samp)
-        GardenFacility.create(garden: garden,
-                              facility: facility_samp)
-      end
-   end
+  facilities_array = []
+  rand(1..10).times do
+      facilities_array << facilities.sample
+  end
+  facilities_array.uniq.each { |facility| GardenFacility.create(garden: garden, facility: facility) }
 end
 
 puts "21 users and 20 gardens with garden facilities had been created..."
