@@ -2,10 +2,13 @@
      <span class="navbar-toggler-icon" id="nav-default" data-action="click->collapsable-sidebar#showSidebar"></span>
   <div id="nav" class="sidebar-nav"  data-collapsable-sidebar-target="sidebar">
      <% if user_signed_in? %>
-  
+
 
     <%= link_to "avatar", class: "navbar-brand" do %>
-      <div><%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %></div>
+      <% if current_user.photo.attached? %>
+        <div><%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %>
+      <% end %>
+      </div>
       <div><p class="navbar-avatar">Profile</p></div>
     <% end %>
 
