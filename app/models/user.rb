@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :trips
+  has_many :reviews
   has_one :garden
   has_one_attached :photo
   # Include default devise modules. Others available are:

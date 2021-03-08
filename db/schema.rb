@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_143057) do
+ActiveRecord::Schema.define(version: 2021_03_08_093531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,8 +71,10 @@ ActiveRecord::Schema.define(version: 2021_03_04_143057) do
     t.bigint "segment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["garden_id"], name: "index_reviews_on_garden_id"
     t.index ["segment_id"], name: "index_reviews_on_segment_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "segments", force: :cascade do |t|
@@ -133,6 +135,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_143057) do
   add_foreign_key "gardens", "users"
   add_foreign_key "reviews", "gardens"
   add_foreign_key "reviews", "segments"
+  add_foreign_key "reviews", "users"
   add_foreign_key "segments", "gardens"
   add_foreign_key "segments", "trips"
   add_foreign_key "trips", "users"
