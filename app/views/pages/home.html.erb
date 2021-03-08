@@ -1,15 +1,17 @@
 <div class="backgroundimage" style="background-image: url(' <%= image_url "landingpage.jpg" %>')">
-<div><%= image_tag "logo-velo-v1.png", class: "logo" %></div>
-<div><%= image_tag "discover-v4.png", class: "sentense" %></div>
-<!-- <h1 style="margin-bottom:50px"><strong>Discover, Meet & Share</strong></h1> -->
+  <div><%= image_tag "logo-velo-v1.png", class: "logo" %></div>
+  <div><%= image_tag "discover-v4.png", class: "sentense" %></div>
+  <!-- <h1 style="margin-bottom:50px"><strong>Discover, Meet & Share</strong></h1> -->
 
-<div class="container">
-  <div class="btn primary-btn-landing">
-    <%= link_to "START RIDE", new_trip_path, data: {turbolinks: "false"}, style: "color: white" %>
-  </div>
+  <div class="container">
+    <div class="btn primary-btn-landing">
+      <%= link_to "START PLANNING", new_trip_path, data: {turbolinks: "false"}, style: "color: white" %>
+    </div>
 
-  <div class="btn secondary-btn secondary-btn-landing">
-    <%= link_to "SIGN UP NOW", new_trip_path, style: "color: #D16014" %>
+  <div class="container">
+    <div class="link-landing">
+      <%= link_to "Don't have an account yet?", new_user_registration_path, style: "color: white" %>
+    </div>
   </div>
-</div>
+  </div>
 </div>
