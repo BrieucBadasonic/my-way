@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
   def new
     @trip = Trip.new
-    @markers = [lat: 52.506872, lng: 13.3913749]
   end
 
   def create
@@ -16,10 +15,9 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @segment = Segment.new
     @gardens = Garden.near(@trip.final_destination, 1000)
-    @wagonlat = 52.506872
-    @wagonlng = 13.3913749
+    @last_segment = Segment.where(trip_id: params[:id]).last
+    @segment = Segment.new
     @markers = @gardens.geocoded.map do |garden|
       {
         lat: garden.latitude,
@@ -31,12 +29,28 @@ class TripsController < ApplicationController
         # image_url: helpers.asset_url('campingmarker1.svg'),
       }
     end
+    @destination = {
+                     lat: @trip.final_destination_latitude,
+                     lng: @trip.final_destination_longitude
+                   }
+    if @last_segment.nil?
+      @origin = {
+                  lat: @trip.start_location_latitude,
+                  lng: @trip.start_location_longitude
+                 }
+    else
+      @origin = {
+                  lat: @last_segment.garden.latitude,
+                  lng: @last_segment.garden.longitude
+                }
+    end
+
   end
 
   private
 
   def trip_params
-    params.require(:trip).permit(:final_destination)
+    params.require(:trip).permit(:final_destination, :start_location_latitude, :start_location_longitude)
   end
 end
 

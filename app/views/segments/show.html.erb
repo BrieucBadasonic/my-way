@@ -1,8 +1,10 @@
 <div class="mapbox-prison">
   <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-set-markers="true"
-    data-markers="<%= @markers.to_json %>"
-    data-destination="<%= @segment.garden %>">
+    style="width: 100%; height: 50vh;"
+    data-view="segment-show"
+    data-origin="<%= @origin.to_json %>"
+    data-destination="<%= @destination.to_json %>"
+    >
   </div>
 </div>
 
@@ -16,7 +18,7 @@
   <div class="stats-container-distance"> <!--need to add class with displayflex -->
     <div class="distance"> <!--add info from api -->
       <i class="distance-icon-stats fas fa-route fa-2x"></i>
-      <p class="text-center mb-0"><strong> 4km </strong></p>
+      <p class="distance-insert text-center mb-0"></p>
       <p class="font-description mb-0"><strong>Distance</strong></p> <!-- add calculation -->
     </div>
   </div>
@@ -32,7 +34,7 @@
   <div class="stats-container-duration">
     <div class="duration">
       <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
-      <p class="text-center mb-0"><strong> 5:42h </strong></p>
+      <p class="time-insert text-center mb-0"></p>
       <p class="font-description mb-0"><strong>Duration</strong></p> <!-- add calculation -->
     </div>
   </div>
@@ -49,5 +51,5 @@
 </div>
 
 <div>
-  <%= link_to "Start Ride", segment_path(@segment), class: "btn primary-btn mb-2" %>
+  <%= link_to "plan next day", trip_path(@trip), class: "btn primary-btn mb-2" %>
 </div>

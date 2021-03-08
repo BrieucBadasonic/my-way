@@ -3,7 +3,14 @@
   background: transparent;
   top: 0;
   margin: 0;
-  z-index: 1
+  margin-top: -32px;
+  // z-index: 1
+}
+
+.navbar-toggler-icon {
+  position: absolute;
+  top: 32px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,7 +28,7 @@
   width: 108px;
   position:absolute;
   top: 66px;
-  left: -108px; 
+  left: -108px;
   z-index: 1;
   height: calc(78vh - 66px);
   transition: all ease 0.5s;
