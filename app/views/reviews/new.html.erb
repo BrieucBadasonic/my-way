@@ -1,0 +1,7 @@
+<div class="container-review-new">
+  <%= simple_form_for [ @garden, @review ] do |f| %>
+    <%= f.input :rating, collection: 1..5, label: "Give the garden 1-5 stars!" %>
+    <%= f.input :description, label: "Leave a review for your host here:" %>
+    <%= f.submit "Submit review", class: "btn primary-btn" %>
+  <% end %>
+</div>
