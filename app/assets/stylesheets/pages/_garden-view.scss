@@ -42,11 +42,7 @@
 }
 
 .garden-description {
-<<<<<<< HEAD
   margin-bottom: 80px;
-=======
-  margin-bottom: 184px;
->>>>>>> master
   margin-top: 18px;
 }
 
@@ -113,6 +109,17 @@
 
 .show-garden-title {
   text-align: center;
+}
+
+.show-page-buttons {
+  margin-bottom: 40px;
+}
+
+.reviews-garden-show {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
 }
 // .show-avatar {
 //   justify-content: flex-start;

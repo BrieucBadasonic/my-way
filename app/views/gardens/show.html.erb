@@ -27,12 +27,12 @@
     <p><%= @garden.description %></p>
   </div>
 
-  <div class="container">
+  <div class="reviews-garden-show">
     <h2 class="mb-2">
       <%= pluralize @garden.reviews.size, "Review" %>
     </h2>
 
-    <div class="reviews-garden-show">
+    <div>
       <% if @garden.reviews.blank? %>
         <p>Be the first to leave a review for <%= @garden.name %></p>
       <% else %>
@@ -44,18 +44,20 @@
     </div>
   </div>
 
-  <% if @trip %>
-    <div>  <%= simple_form_for [@trip, @segment] do |f| %>
-        <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
-        <%= f.input :destination, as: :hidden, input_html: { value: @garden.address } %>
-        <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-view-page-buttons" %>
-        <% end %>
-    </div>
-  <% end %>
+  <div class="show-page-buttons">
+    <% if @trip %>
+      <div>  <%= simple_form_for [@trip, @segment] do |f| %>
+          <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
+          <%= f.input :destination, as: :hidden, input_html: { value: @garden.address } %>
+          <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-view-page-buttons" %>
+          <% end %>
+      </div>
+    <% end %>
 
-  <div>
-    <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
+    <div>
+      <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
     </div>
+  </div>
 </div>
 
 
