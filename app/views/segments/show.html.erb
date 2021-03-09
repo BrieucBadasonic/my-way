@@ -1,7 +1,7 @@
 <div class="page-content" data-controller="collapsable-segments-overview">
   <div class="mapbox-prison">
     <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      style="width: 100%; height: 50vh;"
+      style="width: 100%; height: 40vh;"
       data-view="segment-show"
       data-origin="<%= @origin.to_json %>"
       data-destination="<%= @destination.to_json %>"
@@ -51,17 +51,25 @@
                   <!-- <p><%#= @garden.name %></p> -->
                   <p><%= @garden.address %> </p>
                 </div>
-                   <div><%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
+              </div>
+
+              <div data-controller="switch-checkin-review">
+                <div class="text-center" id="btn-switch"
+                     data-action="click->switch-checkin-review#switch"
+                      >
+                  <%= link_to "Check In Garden", trip_segment_complete_path(@trip, @segment),
+                      method: :post, data: {turbolinks: "false"}, class: "btn primary-btn mb-2",
+                      'data-switch-checkin-review-target' => "checkinbtn"
+                   %>
+                </div>
+                <div class="hidden" data-switch-checkin-review-target="reviewbtn">
+                    <%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
                     <%= f.input :trip, as: :hidden, input_html: { value: @trip.id } %>
                     <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
                     <%= hidden_field_tag :segment_id, @segment.id %>
-                    <%= f.button :submit, "Leave review" %>
+                    <%= f.button :submit, "Leave review", class: "btn primary-btn mb-2" %>
                   <% end %>
-                  </div>
-              </div>
-
-              <div class="text-center">
-                <%= link_to "plan next day", trip_path(@trip), data: {turbolinks: "false"}, class: "btn primary-btn mb-2" %>
+                </div>
               </div>
             </div>
           </div>

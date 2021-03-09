@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   end
 
   resources :trips, only: [ :create, :new, :show ] do
-    resources :segments, only: [ :create, :show ]
+    resources :segments, only: [ :create, :show ] do
+      post "complete", to: "segments#complete"
+    end
   end
 
   # resources :segments, only: [ :show ]

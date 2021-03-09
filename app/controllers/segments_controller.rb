@@ -43,7 +43,9 @@ class SegmentsController < ApplicationController
     end
   end
 
-  def update
+  def complete
+    @segment = Segment.find(params[:segment_id])
+    @segment.completed!
   end
 
   private
