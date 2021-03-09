@@ -8,11 +8,11 @@
 require "open-uri"
 
 puts "Cleaning DB..."
-User.destroy_all
 Facility.destroy_all
 GardenFacility.destroy_all
 Garden.destroy_all
 
+User.destroy_all
 puts "Creating 21 users..."
 
 user1 = User.new(username: "Brieuc",
@@ -471,13 +471,44 @@ puts "20/20"
 puts "Creating 7 facilities..."
 
 shower = Facility.create(name: "shower")
+file = File.open("app/assets/images/icons/chip_garden/shower.svg")
+shower.image.attach(io: file, filename: 'shower.svg', content_type: 'image/svg')
+shower.save!
+
 toilet = Facility.create(name: "toilet")
+file = File.open("app/assets/images/icons/chip_garden/toilet.svg")
+toilet.image.attach(io: file, filename: 'toilet.svg', content_type: 'image/svg')
+toilet.save!
+
 bbq = Facility.create(name: "bbq")
+file = File.open("app/assets/images/icons/chip_garden/bbq.svg")
+bbq.image.attach(io: file, filename: 'bbq.svg', content_type: 'image/svg')
+bbq.save!
+
 bonfire = Facility.create(name: "bonfire")
+file = File.open("app/assets/images/icons/chip_garden/fire-pit.svg")
+bonfire.image.attach(io: file, filename: 'fire-pit.svg', content_type: 'image/svg')
+bonfire.save!
+
 electricity = Facility.create(name: "electricity")
+file = File.open("app/assets/images/icons/chip_garden/electricity.svg")
+electricity.image.attach(io: file, filename: 'electricity.svg', content_type: 'image/svg')
+electricity.save!
+
 water = Facility.create(name: "water")
+file = File.open("app/assets/images/icons/chip_garden/water.svg")
+water.image.attach(io: file, filename: 'water.svg', content_type: 'image/svg')
+water.save!
+
 wifi = Facility.create(name: "wifi")
-pet_allowed = Facility.create(name: "pet_allowed")
+file = File.open("app/assets/images/icons/chip_garden/wifi.svg")
+wifi.image.attach(io: file, filename: 'wifi.svg', content_type: 'image/svg')
+wifi.save!
+
+pet_allowed = Facility.create(name: "pets")
+file = File.open("app/assets/images/icons/chip_garden/pet-allowed.svg")
+pet_allowed.image.attach(io: file, filename: 'pet-allowed.svg', content_type: 'image/svg')
+pet_allowed.save!
 
 facilities = [shower, toilet, bbq, bonfire, electricity, water, wifi, pet_allowed]
 
