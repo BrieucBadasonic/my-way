@@ -26,6 +26,24 @@
   <div class="garden-description">
     <p><%= @garden.description %></p>
   </div>
+
+  <div class="container">
+    <h2 class="mb-2">
+      <%= pluralize @garden.reviews.size, "Review" %>
+    </h2>
+
+    <div class="reviews-garden-show">
+      <% if @garden.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @garden.name %></p>
+      <% else %>
+        <% @garden.reviews.each do |review| %>
+          <p><%= review.user.first_name %></p>
+          <p id="review-<%= review.id %>"><%= review.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <% if @trip %>
     <div>  <%= simple_form_for [@trip, @segment] do |f| %>
         <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
@@ -39,6 +57,8 @@
     <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
     </div>
 </div>
+
+
 
 
 
