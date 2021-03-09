@@ -39,7 +39,7 @@ puts "2/21"
 
 user3 = User.new(username: "Ishany",
                  first_name: "Ishany",
-                 last_name: "Baldir",
+                 last_name: "Balder",
                  email: "ishany@gmail.com",
                  password: "123456")
 user3.save!
@@ -490,7 +490,7 @@ file = File.open("app/assets/images/icons/chip_garden/fire-pit.svg")
 bonfire.image.attach(io: file, filename: 'fire-pit.svg', content_type: 'image/svg')
 bonfire.save!
 
-electricity = Facility.create(name: "electricity")
+electricity = Facility.create(name: "power")
 file = File.open("app/assets/images/icons/chip_garden/electricity.svg")
 electricity.image.attach(io: file, filename: 'electricity.svg', content_type: 'image/svg')
 electricity.save!

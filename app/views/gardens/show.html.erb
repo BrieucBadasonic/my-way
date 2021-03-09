@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container-garden-show">
   <div class="card-garden">
     <%= cl_image_tag @garden.photo.key, width: 1140, height: 400, class: "img-garden", crop: :fill %>
   </div>
 
-  <div>
+  <div class="show-garden-title">
     <h2><%= @garden.name %></h2>
     <div class="container">
-      <div class="row">
+      <div class="row-facilities">
         <% @facilities.each do |facility| %>
           <div class="garden-chip col-3">
               <% if facility.image.attached? %>
