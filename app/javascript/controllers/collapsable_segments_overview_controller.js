@@ -7,7 +7,7 @@ import { Controller } from "stimulus"
 import { map } from "../plugins/init_mapbox.js";
 
 export default class extends Controller {
-  static targets = [ "icon", "segmentmap", "segmentcontainer" ]
+  static targets = [ "icon", "segmentmap", "segmentcontainer", "segmenttripnew" ]
 
   connect() {
     // console.log(mapSegment, "segment")
