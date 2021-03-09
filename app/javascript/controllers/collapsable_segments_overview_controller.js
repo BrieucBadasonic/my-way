@@ -26,7 +26,7 @@ export default class extends Controller {
       this.iconTarget.classList.toggle("fa-chevron-down");
       this.iconTarget.classList.toggle("fa-chevron-up");
       this.segmentcontainerTarget.classList.toggle("closed");
-      if (this.segmentmapTarget.style.height === "50vh") {
+      if (this.segmentmapTarget.style.height === "40vh") {
         this.segmentmapTarget.style.height = "95vh";
       } else {
         this.segmentmapTarget.style.height = "50vh";
@@ -34,6 +34,8 @@ export default class extends Controller {
       map.resize();
     }
   };
+
+
 
   // collapsableup() {
   //   this.iconTarget.classList.add("fa-chevron-down");

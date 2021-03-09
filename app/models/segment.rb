@@ -13,4 +13,8 @@ class Segment < ApplicationRecord
     latitude: :start_latitude,
     longitude: :start_longitude
   after_validation :geocode, if: :will_save_change_to_destination?
+
+  def completed!
+    update(completed: :true)
+  end
 end

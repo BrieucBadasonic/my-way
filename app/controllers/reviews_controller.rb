@@ -14,7 +14,7 @@ def create
   @review.garden = @garden
 
   if @review.save
-    redirect_to garden_path(@garden, anchor: "review-#{@review.id}")
+    redirect_to trip_path(@segment.trip.id)
   else
     flash[:alert] = "Something went wrong."
     render :new
