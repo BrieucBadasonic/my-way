@@ -1,18 +1,28 @@
 <div class="container">
   <div class="container-review-info">
+    <div>
     <%= cl_image_tag(@garden.photo.key) %>
-
-    <h2><%= @garden.name %></h2>
-    <p><%= @garden.user.username %></p>
-
+    </div>
+    <div class="text-center mt-4 mb-1">
+    <h4>Rate your experience at <%= @garden.user.username %>'s garden!</h4>
+    <p> <%= @garden.name %> </p>
+    </div>
   </div>
 
-  <div class="container-review-new">
+  <div class="text-center container-review-new mt-1">
     <%= simple_form_for [ @garden, @review ] do |f| %>
-      <%= f.input :rating, collection: 1..5, label: "Give the garden of #{@garden.user.username} 1-5 ⭐!" %>
-      <%= f.input :description, label: "Leave a review for your host here:" %>
+      <%= f.input :rating, collection: (1..5).to_a, label: false, class:"mt-0" %>
+      <!-- <div class="w-100 d-flex justify-content-between align-items-end mt-0 mb-2">
+        <p class="text-mini mb-1 slider-scale slider-output">0</p>
+        <p class="text-mini mb-1 slider-scale slider-output">1</p>
+        <p class="text-mini mb-1 slider-scale slider-output">2</p>
+        <p class="text-mini mb-1 slider-scale slider-output">3</p>
+        <p class="text-mini mb-1 slider-scale slider-output">4</p>
+        <p class="text-mini mb-1 slider-scale slider-output">5</p>
+      </div> -->
+      <%= f.input :description, label: false, placeholder: "Leave feedback for the host.", :input_html => {:rows => 4} %>
       <%= hidden_field_tag :segment_id, params[:segment_id] %>
-      <%= f.submit "Submit review", class: "btn primary-btn-review" %>
+      <%= f.submit "Submit Review", class: "btn primary-btn-review" %>
     <% end %>
   </div>
 </div>
