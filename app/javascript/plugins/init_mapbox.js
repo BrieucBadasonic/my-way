@@ -26,10 +26,10 @@ const fitMapToMarkers = (map, markers) => {
 
 const updateStats = (distance, hours, minutes) => {
   const statsDistance = document.querySelector(".distance-insert")
-  statsDistance.innerText = `${distance.toFixed(1)} Km`;
+  statsDistance.innerText = `${distance.toFixed(1)} km`;
 
   const statsTime = document.querySelector(".time-insert")
-  statsTime.innerText = `${hours}H${minutes}`
+  statsTime.innerText = `${hours}hrs ${minutes}mins`
 };
 
 const callApiToGetDistanceAndTime = (coordinates) => {
@@ -160,8 +160,8 @@ console.log("set markers")
           element.className = 'marker';
           element.style.backgroundImage = `url('${marker.image_url}')`;
           element.style.backgroundSize = 'cover';
-          element.style.width = '40px';
-          element.style.height = '40px';
+          element.style.width = '25px';
+          element.style.height = '25px';
 
 
           // Pass the element as an argument to the new marker

@@ -6,24 +6,21 @@
      >
 </div>
 
-<div class="container">
-  <div class="text-center mt-3"> <!--need to add class -->
-    <h1 class="title"><strong>Plan Your Trip</strong></h1>
-  </div>
+<div class="container-trip-new">
+  <div class="trip-new-box">
+    <div class="text-center mt-3">
+      <h1 class="title"><strong>Plan Your Trip</strong></h1>
+    </div>
 
-<!--   <div class="", style="margin-bottom: 30px"> need to add class ?
-    <p><strong>My final destination is:</strong></p>
-  </div>
- -->
+    <div class="text-center mt-3">
+      <%= simple_form_for @trip do |f| %>
+      <%= f.input :final_destination, label: false, placeholder: 'Where do you wanna ride?'%>
 
-  <div class="text-center mt-3">
-    <%= simple_form_for @trip do |f| %>
-    <%= f.input :final_destination, label: false, placeholder: 'Where do you want your bike to take you?'%>
-
-    <%= f.input :start_location_latitude, as: :hidden %>
-    <%= f.input :start_location_longitude, as: :hidden %>
-    <%= f.submit "Start Trip", class: "btn primary-btn mt-2" %>
-    <% end %>
+      <%= f.input :start_location_latitude, as: :hidden %>
+      <%= f.input :start_location_longitude, as: :hidden %>
+      <%= f.submit "Start Trip", class: "btn primary-btn mt-2" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
