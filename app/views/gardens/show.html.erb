@@ -37,8 +37,8 @@
         <p>Be the first to leave a review for <%= @garden.name %></p>
       <% else %>
         <% @garden.reviews.each do |review| %>
-          <p><%= review.user.first_name %></p>
-          <p id="review-<%= review.id %>"><%= review.content %></p>
+          <p><%= review.user.first_name %> <%= review.rating %></p>
+          <p id="review-<%= review.id %>"><%= review.description %></p>
         <% end %>
       <% end %>
     </div>

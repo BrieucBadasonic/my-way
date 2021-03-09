@@ -12,13 +12,12 @@
       <h1 class="title"><strong>Plan Your Trip</strong></h1>
     </div>
 
-    <div class="text-center mt-3">
+    <div class="text-center">
       <%= simple_form_for @trip do |f| %>
-      <%= f.input :final_destination, label: false, placeholder: 'Where do you wanna ride?'%>
-
-      <%= f.input :start_location_latitude, as: :hidden %>
-      <%= f.input :start_location_longitude, as: :hidden %>
-      <%= f.submit "Start Trip", class: "btn primary-btn mt-2" %>
+        <%= f.input :final_destination, label: false, placeholder: 'Where do you wanna ride?'%>
+        <%= f.hidden_field :start_location_latitude %>
+        <%= f.hidden_field :start_location_longitude %>
+        <%= f.submit "Start Trip", class: "btn primary-btn" %>
       <% end %>
     </div>
   </div>

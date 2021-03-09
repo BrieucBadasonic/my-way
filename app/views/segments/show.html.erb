@@ -19,7 +19,7 @@
     <div class="segment-overview"
          data-collapsable-segments-overview-target="segmentcontainer">
        <div class="container-trip-new">
-          <div class="trip-new-box">
+          <div class="segment-show-card">
             <div class="">
               <div class=""> <!--need to add class -->
                 <h1 class="title title-segment"><strong>Details of todays ride</strong></h1>
@@ -64,10 +64,10 @@
                 </div>
                 <div class="hidden" data-switch-checkin-review-target="reviewbtn">
                     <%= simple_form_for [@trip, @segment], :url => new_garden_review_path(@garden), :method => :get do |f| %>
-                    <%= f.input :trip, as: :hidden, input_html: { value: @trip.id } %>
+                    <%= f.hidden_field :trip, value: @trip.id  %>
                     <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
                     <%= hidden_field_tag :segment_id, @segment.id %>
-                    <%= f.button :submit, "Leave review", class: "btn primary-btn mb-2" %>
+                    <%= f.button :submit, "Leave review", class: "btn primary-btn btn-review-segment" %>
                   <% end %>
                 </div>
               </div>
