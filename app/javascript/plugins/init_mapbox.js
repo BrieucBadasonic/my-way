@@ -142,9 +142,9 @@ console.log("segment#show")
       if (mapElement.dataset.setMarkers === "true") {
 console.log("set markers")
         const markers = JSON.parse(mapElement.dataset.markers);
-        markers.forEach((marker) => {
-          new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
-        });
+        // markers.forEach((marker) => {
+        //   new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+        // });
 
 
         markers.forEach((marker) => {
@@ -157,11 +157,11 @@ console.log("set markers")
 
           // Create a HTML element for your custom marker
           const element = document.createElement('div');
-          // element.className = 'marker';
+          element.className = 'marker';
           element.style.backgroundImage = `url('${marker.image_url}')`;
-          element.style.backgroundSize = 'contain';
-          element.style.width = '25px';
-          element.style.height = '25px';
+          element.style.backgroundSize = 'cover';
+          element.style.width = '40px';
+          element.style.height = '40px';
 
 
           // Pass the element as an argument to the new marker

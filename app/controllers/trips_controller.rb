@@ -26,7 +26,7 @@ class TripsController < ApplicationController
         description: garden.description,
         facility: garden.facilities.all,
         infoWindow: render_to_string(partial: "info_window", locals: { garden: garden }),
-        # image_url: helpers.asset_url('campingmarker1.svg'),
+        image_url: helpers.asset_url('campinglocation.png'),
       }
     end
     @destination = {
