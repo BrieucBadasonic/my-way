@@ -8,15 +8,17 @@ h1 {
 .backgroundimage {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding-top: 47px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  margin-top: -16px;
 }
 
-.container {
+.container-landing {
+  padding-top: 32px;
   display: flex;
   justify-content: center;
   align-content: flex-end;
@@ -34,3 +36,4 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
+
