@@ -26,19 +26,41 @@
   <div class="garden-description">
     <p><%= @garden.description %></p>
   </div>
-  <% if @trip %>
-    <div>  <%= simple_form_for [@trip, @segment] do |f| %>
-        <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
-        <%= f.input :destination, as: :hidden, input_html: { value: @garden.address } %>
-        <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-view-page-buttons" %>
-        <% end %>
-    </div>
-  <% end %>
 
-  <div>
-    <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
+  <div class="reviews-garden-show">
+    <h2 class="mb-2">
+      <%= pluralize @garden.reviews.size, "Review" %>
+    </h2>
+
+    <div>
+      <% if @garden.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @garden.name %></p>
+      <% else %>
+        <% @garden.reviews.each do |review| %>
+          <p><%= review.user.first_name %></p>
+          <p id="review-<%= review.id %>"><%= review.content %></p>
+        <% end %>
+      <% end %>
     </div>
+  </div>
+
+  <div class="show-page-buttons">
+    <% if @trip %>
+      <div>  <%= simple_form_for [@trip, @segment] do |f| %>
+          <%= f.association :garden, as: :hidden, input_html: { value: @garden.id } %>
+          <%= f.input :destination, as: :hidden, input_html: { value: @garden.address } %>
+          <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-view-page-buttons" %>
+          <% end %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= link_to "Back", :back, data: {turbolinks: "false"}, class: "btn primary-btn primary-btn-view-page-buttons" %>
+    </div>
+  </div>
 </div>
+
+
 
 
 
