@@ -31,7 +31,7 @@
   background: #D16014;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px 24px;
   display: flex;
   justify-content: center;
@@ -46,19 +46,20 @@
   &-popup-select {
     position: relative;
     padding: 2px 8px;
-    width: 112%;
+    width: 50px;
     font-size: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 26px;
     margin-left: 10px;
+    margin-top: 0 !important;
   }
 
   &-popup-view {
     position: relative;
     padding: 2px 8px;
-    width: 40%;
+    width: 50px;
     font-size: 12px;
-    margin-bottom: 10px;
-    margin-right:10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
   }
 
   &-view-page-buttons {
