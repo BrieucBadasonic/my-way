@@ -282,7 +282,7 @@ puts "3/20"
 
 garden4 = Garden.new(name: "A lot of Privacy",
                    description: "Enclosed garden with lots of shade from trees. Camping spot 100m from the house. A lot of privacy. Table and chairs available." ,
-                   address: "Werenzhainer Hauptstraße 03253 Doberlug-Kirchhain",
+                   address: "Werenzhainer Hauptstraße, 03253 Doberlug-Kirchhain",
                    tent_capacity: 5,
                    user: user5)
 garden4.save!
@@ -291,9 +291,9 @@ garden4.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 puts "4/20"
 
-garden5 = Garden.new(name: "Wildlife and Chickem",
+garden5 = Garden.new(name: "Wildlife and Chicken",
                    description: "Quiet and wide wildlife (maintained) private garden. Chickens (separate) and sweet dog (labrador).",
-                   address: "Lauchhammer 01979",
+                   address: "Lauchhammer, 01979",
                    tent_capacity: 3,
                    user: user6)
 garden5.save!
@@ -302,9 +302,9 @@ garden5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 puts "5/20"
 
-garden6 = Garden.new(name: "Shade, sheeps and chicken",
+garden6 = Garden.new(name: "Shade, Sheeps and Chicken",
                    description: "Welcome in our garden on our lawn or close to the sheep and chickens! Shade for little tents. Little playground, trampoline, sandplay.",
-                   address: "Dorfstraße 12 01561 Thiendorf",
+                   address: "Dorfstraße 12, 01561 Thiendorf",
                    tent_capacity: 2,
                    user: user7)
 garden6.save!
@@ -315,7 +315,7 @@ puts "6/20"
 
 garden7 = Garden.new(name: "Bee Garden",
                    description: "Garden surrounded by flowers, a beehive, a little creek, birds and squirrels...welcome! Not to forget a sweet, but curious dog named Layko",
-                   address: "Waldteichstraße 5 01471 Radeburg",
+                   address: "Waldteichstraße 5, 01471 Radeburg",
                    tent_capacity: 2,
                    user: user8)
 garden7.save!
@@ -324,9 +324,9 @@ garden7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 puts "7/20"
 
-garden8 = Garden.new(name: "Nature lovers",
+garden8 = Garden.new(name: "Nature Lovers",
                    description: "We live in respect with nature, so deers or chickens might wake you in the morning.",
-                   address: "Bärnsdorfer Hauptstraße 6 01471 Radeburg",
+                   address: "Bärnsdorfer Hauptstraße 6, 01471 Radeburg",
                    tent_capacity: 1,
                    user: user9)
 garden8.save!
@@ -337,7 +337,7 @@ puts "8/20"
 
 garden9 = Garden.new(name: "Garden in the Fields",
                    description: "We have a nice garden surrounded by fields. There is a fridge and microwave oven in our shed that you can use. We also have chairs and a table in our garden.",
-                   address: "Hospitalstraße 01471 Radeburg",
+                   address: "Hospitalstraße, 01471 Radeburg",
                    tent_capacity: 2,
                    user: user10)
 garden9.save!
@@ -348,7 +348,7 @@ puts "9/20"
 
 garden10 = Garden.new(name: "Eco Garden",
                    description: "Wild garden with bonfire, eco-toilet, swimming pond and hammock",
-                   address: "Kleinnaundorf 01561 Tauscha",
+                   address: "Kleinnaundorf, 01561 Tauscha",
                    tent_capacity: 3,
                    user: user11)
 garden10.save!
@@ -357,9 +357,9 @@ garden10.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "10/20"
 
-garden11 = Garden.new(name: "Cherry tree Garden",
+garden11 = Garden.new(name: "Cherry Tree Garden",
                    description: "The garden is in the backyard of our house. Behind the garden, there is some old cherry and pear trees.",
-                   address: "Damsdorf 15938 Steinreich",
+                   address: "Damsdorf, 15938 Steinreich",
                    tent_capacity: 3,
                    user: user12)
 garden11.save!
@@ -368,9 +368,9 @@ garden11.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "11/20"
 
-garden12 = Garden.new(name: "Wild tree and hammocks",
+garden12 = Garden.new(name: "Wild Tree and Hammocks",
                    description: "Some wild trees and bushes on top of a small hill perfect to put some tents or some hammocks in between. The trees give a lot of privacy from the surrounding houses.",
-                   address: "Mühlbach 01561 Lampertswalde",
+                   address: "Mühlbach, 01561 Lampertswalde",
                    tent_capacity: 3,
                    user: user13)
 garden12.save!
@@ -379,7 +379,7 @@ garden12.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "12/20"
 
-garden13 = Garden.new(name: "Campfire garden",
+garden13 = Garden.new(name: "Campfire Garden",
                    description: "Acces to water and power even when host is not there. But i wish i will be there to chat drink and play music around the campfire.",
                    address: "Ponickau 01561 Thiendorf",
                    tent_capacity: 4,
@@ -390,9 +390,9 @@ garden13.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "13/20"
 
-garden14 = Garden.new(name: "River garden",
+garden14 = Garden.new(name: "River Garden",
                    description: "surrounding by trees , very small river along the garden.",
-                   address: "Tannenweg 90-93 01990 Großkmehlen",
+                   address: "Tannenweg 90-93, 01990 Großkmehlen",
                    tent_capacity: 2,
                    user: user15)
 garden14.save!
@@ -401,9 +401,9 @@ garden14.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "14/20"
 
-garden15 = Garden.new(name: "Garden in the countryside",
+garden15 = Garden.new(name: "Garden in the Countryside",
                    description: "We can accomodate you in our nice garden at the countryside. We will be delighted to share a glass and chat a little bit if we have some time.",
-                   address: "Kroppen 01945",
+                   address: "Kroppen, 01945",
                    tent_capacity: 2,
                    user: user16)
 garden15.save!
@@ -412,9 +412,9 @@ garden15.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "15/20"
 
-garden16 = Garden.new(name: "Familly Garden",
+garden16 = Garden.new(name: "Family Garden",
                    description: "We propose 1 pitch for a family tent. The ground is slightly sloping.",
-                   address: "Plessaer Str. 1 04928 Schraden",
+                   address: "Plessaer Str. 1, 04928 Schraden",
                    tent_capacity: 1,
                    user: user17)
 garden16.save!
@@ -425,7 +425,7 @@ puts "16/20"
 
 garden17 = Garden.new(name: "Hill Garden",
                    description: "Bushy garden on the hill. Not perfectly flat but nice. Steep climb to reach your destination ... ",
-                   address: "Seestraße 9 01979 Lauchhammer",
+                   address: "Seestraße 9, 01979 Lauchhammer",
                    tent_capacity: 2,
                    user: user18)
 garden17.save!
@@ -436,7 +436,7 @@ puts "17/20"
 
 garden18 = Garden.new(name: "Quiet Garden",
                    description: "A very natural and quiet garden",
-                   address: "Finsterwalder Str. 11 03253 Doberlug-Kirchhain",
+                   address: "Finsterwalder Str. 11, 03253 Doberlug-Kirchhain",
                    tent_capacity: 2,
                    user: user19)
 garden18.save!
@@ -445,9 +445,9 @@ garden18.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "18/20"
 
-garden19 = Garden.new(name: "Big garden and BBQ",
+garden19 = Garden.new(name: "Big Garden and BBQ",
                    description: "We have a big garden with camping spots in the shade. A barbecue is available for hosts.",
-                   address: "Luckauer Str. 9 15936 Dahme/Mark",
+                   address: "Luckauer Str. 9, 15936 Dahme/Mark",
                    tent_capacity: 5,
                    user: user20)
 garden19.save!
@@ -456,9 +456,9 @@ garden19.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 
 puts "19/20"
 
-garden20 = Garden.new(name: "Little savage Garden",
+garden20 = Garden.new(name: "Little Savage Garden",
                    description: "Welcome in my little savage garden behind the house",
-                   address: "Stechau 04936 Fichtwald",
+                   address: "Stechau, 04936 Fichtwald",
                    tent_capacity: 1,
                    user: user21)
 garden20.save!

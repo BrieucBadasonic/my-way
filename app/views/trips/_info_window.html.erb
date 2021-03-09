@@ -3,19 +3,15 @@
     <%= cl_image_tag garden.photo.key, height: 100, width: 150, crop: :fill %>
   </div>
   <div class="container-popup">
-    <div class="popup-title">
-      <h6><%= garden.name %></h6>
-    </div>
-    <div class="popup-button-flex justify-content-between">  <%= simple_form_for [@trip, @segment] do |f| %>
+    <div class="popup-card">
+      <h6 class="text-center mt-3 mb-0"><%= garden.name %></h6>
+    <div class="popup-button-flex">  <%= simple_form_for [@trip, @segment] do |f| %>
       <%= f.association :garden, as: :hidden, input_html: { value: garden.id } %>
       <%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
       <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-popup-select" %>
       <% end %>
       <%= link_to "View", garden_path(garden, trip: @trip.id), class: "btn primary-btn primary-btn-popup-view" %>
     </div>
+    </div>
   </div>
-
 </div>
-
-
-
