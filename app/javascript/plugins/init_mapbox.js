@@ -121,6 +121,8 @@ console.log("trip#show")
         if (origin || destination) {
             directions.setOrigin([origin.lng, origin.lat]);
             directions.setDestination([destination.lng, destination.lat]);
+            let coordinates = `coordinates=${origin.lng},${origin.lat};${destination.lng},${destination.lat}`
+            callApiToGetDistanceAndTime(coordinates)
             getGardenCoordOnClick(map, origin);
         };
       }

@@ -28,10 +28,11 @@ export default class extends Controller {
       this.segmentcontainerTarget.classList.toggle("closed");
       if (this.segmentmapTarget.style.height === "40vh") {
         this.segmentmapTarget.style.height = "95vh";
-      } else {
-        this.segmentmapTarget.style.height = "50vh";
+        map.resize();
+      } else if (this.segmentmapTarget.style.height === "95vh") {
+        this.segmentmapTarget.style.height = "40vh";
+        map.resize();
       }
-      map.resize();
     }
   };
 

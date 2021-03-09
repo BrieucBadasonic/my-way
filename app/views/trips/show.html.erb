@@ -27,8 +27,6 @@
         </div>
       </div>
 
-
-
       <div class="stats-container-duration">
         <div class="duration">
           <i class="duration-icon-stats fas fa-stopwatch fa-2x"></i> <!--add info from api  -->
@@ -38,8 +36,7 @@
     </div>
 
     <div>
-      <%= link_to "Change Final Destination", new_trip_path, class: "btn primary-btn" %>
+      <%= link_to "Change Final Destination", new_trip_path, data: {turbolinks: "false"}, class: "btn primary-btn" %>
     </div>
   </div>
-
 </div>
