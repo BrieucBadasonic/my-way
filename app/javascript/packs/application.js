@@ -27,6 +27,9 @@ import "bootstrap";
 import { initMapbox }       from "../plugins/init_mapbox.js";
 
 import { initAutocomplete } from "../plugins/init_autocomplete.js";
+
+import { initStarRating } from '../plugins/init_star_rating';
+
 // import { finishrideButton } from "../plugins/finishride_button";
 
 
@@ -34,11 +37,14 @@ import { initAutocomplete } from "../plugins/init_autocomplete.js";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initStarRating();
   initMapbox();
   initAutocomplete();
+
   // finishrideButton();
 });
 
 import "controllers"
+
 
 
