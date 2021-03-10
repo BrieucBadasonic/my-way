@@ -11,7 +11,10 @@
             <%= cl_image_tag @garden.user.photo.key, class: "avatar-view-page" %>
           </div>
           <div class="stars-owner">
-            <p><%= @garden.user.username %>'s garden</p>
+            <p class="mb-1"><%= @garden.user.username %>'s garden</p>
+              <% if !@garden.reviews.blank? %>
+                <p style="font-weight: 100">★ <%= Review.average(:rating).round(2) %></p>
+              <% end %>
           </div>
         </div>
       <div class="container">
@@ -46,8 +49,14 @@
           <p>Be the first to leave a review for <%= @garden.name %></p>
         <% else %>
           <% @garden.reviews.each do |review| %>
-            <p><%= review.user.first_name %> <%= review.rating %></p>
-            <p id="review-<%= review.id %>" class="border-bottom"><%= review.description %></p>
+            <p><%= review.user.first_name %></p>
+            <p><% (review.rating).times do %>
+            <%= "★" %>
+            <% end %>
+            <% (5 - review.rating).times do %>
+            <%= "☆" %>
+            <% end %>
+            <p id="review-<%= review.id %>" class="border-bottom" style="font-weight: 100"><%= review.description %></p>
           <% end %>
         <% end %>
       </div>
