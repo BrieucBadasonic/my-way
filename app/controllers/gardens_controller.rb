@@ -8,4 +8,6 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
     @facilities = @garden.facilities
   end
+
+
 end
