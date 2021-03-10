@@ -258,7 +258,7 @@ garden1.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 puts "1/20"
 
-garden2 = Garden.new(name: "Trees and Vegetables",
+garden2 = Garden.new(name: "Shade, Sheeps and Chicken",
                    description: "Large garden with park trees and vegetable garden. Camp places in the sun or in the shade. Firewood, fire bowl, chairs and table available.",
                    address: "Sperenberg, 15838 Am Mellensee",
                    tent_capacity: 4,
@@ -302,7 +302,7 @@ garden5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 puts "5/20"
 
-garden6 = Garden.new(name: "Shade, Sheeps and Chicken",
+garden6 = Garden.new(name: "Tree and Vegetables",
                    description: "Welcome in our garden on our lawn or close to the sheep and chickens! Shade for little tents. Little playground, trampoline, sandplay.",
                    address: "Am Klosterbach 32, 09326 Geringswalde",
                    tent_capacity: 2,
@@ -436,7 +436,7 @@ puts "17/20"
 
 garden18 = Garden.new(name: "Quiet Garden",
                    description: "A very natural and quiet garden",
-                   address: "Horstdorfer Weg 2, 06786 Oranienbaum-Wörlitz",
+                   address: "Kurländer Allee 26A, 14055 Berlin",
                    tent_capacity: 2,
                    user: user19)
 garden18.save!
