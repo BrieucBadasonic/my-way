@@ -45,20 +45,24 @@
 
   &-popup-select {
     position: relative;
+    border-radius: 2px !important;
     padding: 2px 8px;
     width: 50px;
     font-size: 12px;
-    margin-bottom: 26px;
+    margin-bottom: 38px;
     margin-left: 10px;
     margin-top: 0 !important;
   }
 
   &-popup-view {
     position: relative;
-    padding: 2px 8px;
+    padding: 2px 8px 19px;
+    margin-bottom: 1px;
     width: 50px;
+    height: 58%;
     font-size: 12px;
-    margin-bottom: 15px;
+    border-radius: 2px !important;
+    // margin-bottom: 15px;
     margin-right: 10px;
   }
 
