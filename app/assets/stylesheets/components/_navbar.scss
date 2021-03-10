@@ -24,13 +24,14 @@
 .sidebar-nav {
   // background-color: rgba(255, 89, 0, 0.6);
   background-color:#D16014;
+  height: 395px;
   opacity: 0.8;
   width: 108px;
   position:absolute;
   top: 66px;
   left: -108px;
   z-index: 1;
-  height: calc(78vh - 66px);
+  // height: calc(78vh - 66px);
   transition: all ease 0.5s;
   border-radius: 16px;
 }
@@ -38,6 +39,7 @@
 .open {
   width: 108px;
   left: 0px;
+  height: 395px;
 }
 
 .navbar-brand {
