@@ -76,6 +76,7 @@
 .primary-btn:hover {
   text-decoration: none;
   opacity: 0.9;
+  color: white;
 }
 
 .secondary-btn {
@@ -121,5 +122,7 @@
   opacity: 0.9;
 }
 
-
-
+.btn-green-review {
+  background-color:  rgba(147, 159, 92, 1) !important;
+  opacity: 1 !important;
+}

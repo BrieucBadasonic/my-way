@@ -67,7 +67,7 @@
                     <%= f.hidden_field :trip, value: @trip.id  %>
                     <%= f.input :segment, as: :hidden, input_html: { value: @segment.id } %>
                     <%= hidden_field_tag :segment_id, @segment.id %>
-                    <%= f.button :submit, "Leave review", class: "btn primary-btn btn-review-segment" %>
+                    <%= f.button :submit, "Leave review", class: "btn primary-btn btn-review-segment btn-green-review" %>
                   <% end %>
                 </div>
               </div>
