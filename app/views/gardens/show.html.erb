@@ -10,10 +10,23 @@
           <div>
             <%= cl_image_tag @garden.user.photo.key, class: "avatar-view-page" %>
           </div>
-          <div class="stars-owner">
-            <p><%= @garden.user.username %>'s garden</p>
+          <div class="owner-capacity">
+            <div class="owner-name">
+              <p><%= @garden.user.username %>'s garden</p>
+            </div>
+            <div class="tent-capacity">
+              <p>
+                <div class="tent">
+                  <%= image_tag("tent.svg") %>
+                </div>
+                <div class="capacity">
+                  <%= @garden.tent_capacity %>
+                </div>
+              </p>
+            </div>
           </div>
         </div>
+
       <div class="container">
         <div class="row-facilities">
           <% @facilities.each do |facility| %>
