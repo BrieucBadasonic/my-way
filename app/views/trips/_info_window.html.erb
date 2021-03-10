@@ -6,9 +6,9 @@
     <div class="popup-card">
       <h6 class="text-center mt-2 mb-1"><%= garden.name %></h6>
       <% unless garden.reviews.blank? %>
-        <h6 class="text-center mb-0", style="font-weight: 100">⭐ <%= garden.reviews.average(:rating) %></h6>
+        <h6 class="text-center mb-1", style="font-weight: 100">⭐ <%= garden.reviews.average(:rating) %></h6>
       <% end %>
-    <div class="popup-button-flex">  <%= simple_form_for [@trip, @segment] do |f| %>
+    <div class="popup-button-flex mb-1">  <%= simple_form_for [@trip, @segment] do |f| %>
       <%= f.association :garden, as: :hidden, input_html: { value: garden.id } %>
       <%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
       <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-popup-select" %>
