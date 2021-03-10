@@ -1,5 +1,5 @@
 meta_product_name: "My Way"
 meta_title: "My Way - Discover, Meet and Share"
 meta_description: "Plan your trip, find a garden and get on your bike!"
-meta_image: "cover.png" # should exist in `app/assets/images/`
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
