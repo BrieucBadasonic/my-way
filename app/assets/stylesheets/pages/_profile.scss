@@ -1,6 +1,10 @@
 .profile {
   height: 100vh;
-  background: linear-gradient(180deg, rgba(49, 55, 21, 0.5) 0%, rgba(209, 96, 20, 1) 100%);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .mytrips-profile-btn {
@@ -21,6 +25,29 @@
   transition: opacity 0.3s ease;
   font-weight: 700;
 }
+
+.mytrips-profile-btn:hover {
+  text-decoration: none;
+  opacity: 0.9;
+  color: white;
+}
+
+.container-profile {
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.profile-top {
+
+}
+
+.profile-bottom {
+
+}
+
 
 .garden-profile-title {
   background: #D16014;
