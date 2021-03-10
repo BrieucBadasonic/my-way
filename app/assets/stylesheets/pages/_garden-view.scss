@@ -6,6 +6,8 @@
   height: 200px;
   margin-top: 48px;
   margin-bottom: 16px;
+  margin-right: -5px;
+  border-radius: 8px;
 }
 
 .card-garden .img-garden {
@@ -47,14 +49,12 @@
 }
 
 .garden-chip {
-    width: 28%;
-    height: auto;
     display: flex;
     justify-content: space-around;
     margin-top: 8px;
     margin-bottom: 8px;
-    margin-left: 9px;
-    margin-right: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
     background-color: #A7B773;
     border-radius: 16px;
     padding-top: 2px;
@@ -71,7 +71,7 @@
   object-fit: contain;
   width: 16px;
   height: 16px;
-  margin-right: 8px;
+  margin-right: 2px;
   margin-left: 9px;
   margin-top: -4px;
   justify-content: space-around;
@@ -144,20 +144,27 @@
   padding-bottom: 16px;
 }
 
-.stars-owner {
+.owner-capacity {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: -17px;
   margin-left: 8px;
   flex-direction: column;
 }
-// .show-avatar {
-//   justify-content: flex-start;
-//   display: flex;
-//   padding-left: 16px;
-// }
 
+.owner-name {
+  margin-top: -3px;
+  margin-bottom: -16px;
+}
+
+.tent-capacity {
+  display: flex;
+  flex-direction: row;
+  margin-top: -3px;
+  margin-left: -64px;
+}
 
 .avatar-view-page {
   width: 40px;
@@ -166,7 +173,13 @@
   border: white 1px solid;
 }
 
-// .avatar {
-//   width: 40px;
-//   border-radius: 50%;
-// }
+.tent {
+  margin-right: 4px;
+
+}
+
+.capacity {
+  margin-left: 4px;
+  margin-top: 2px;
+}
+

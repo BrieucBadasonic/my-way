@@ -16,7 +16,23 @@
                 <p style="font-weight: 100">★ <%= Review.average(:rating).round(2) %></p>
               <% end %>
           </div>
+          <div class="owner-capacity">
+            <div class="owner-name">
+              <p><%= @garden.user.username %>'s garden</p>
+            </div>
+            <div class="tent-capacity">
+              <p>
+                <div class="tent">
+                  <%= image_tag("tent.svg") %>
+                </div>
+                <div class="capacity">
+                  <%= @garden.tent_capacity %>
+                </div>
+              </p>
+            </div>
+          </div>
         </div>
+
       <div class="container">
         <div class="row-facilities">
           <% @facilities.each do |facility| %>
