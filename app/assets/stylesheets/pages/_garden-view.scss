@@ -2,7 +2,7 @@
 .card-garden {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   height: 200px;
   margin-top: 48px;
   margin-bottom: 16px;
@@ -17,13 +17,13 @@
 .card-garden h2 {
   font-size: 16px;
   font-weight: bold;
-  // margin: 0;
 }
 
 .card-garden p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  margin-right: -5px;
 }
 
 .card-garden .card-garden-facilities {
@@ -97,6 +97,7 @@
   margin-right: -8px;
   margin-left: -8px;
   justify-content: center;
+  padding-top: 16px;
 }
 
 .container-garden-show {
@@ -109,10 +110,11 @@
 
 .show-garden-title {
   text-align: center;
+  padding-top: 24px;
 }
 
 .show-page-buttons {
-  margin-bottom: 40px;
+  margin-bottom: -40px;
 }
 
 .reviews-garden-show {
@@ -120,6 +122,34 @@
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
+}
+
+.garden-view-box {
+  margin-bottom: 20px;
+  padding-bottom: 80px;
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  width: 92vw;
+  border-radius: 8px;
+}
+
+.stars-avatar-owner {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+  padding-bottom: 16px;
+}
+
+.stars-owner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -17px;
+  margin-left: 8px;
 }
 // .show-avatar {
 //   justify-content: flex-start;
@@ -128,12 +158,12 @@
 // }
 
 
-// .avatar-bordered {
-//   width: 40px;
-//   border-radius: 50%;
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-//   border: white 1px solid;
-// }
+.avatar-view-page {
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
 
 // .avatar {
 //   width: 40px;
