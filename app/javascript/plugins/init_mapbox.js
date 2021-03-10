@@ -6,9 +6,18 @@ import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 // selecting the map element
 const mapElement = document.getElementById("map");
 // get the API key out of the map element
+console.log(mapElement)
 if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 };
+  const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v10",
+      // center: [13.404954, 52.520008],
+      zoom: 15,
+      // attributionControl: false,
+    });
+
 
 
 const fitMapToMarkers = (map, markers) => {
@@ -66,13 +75,7 @@ const getGardenCoordOnClick = (map, origin) => {
 const initMapbox = () => {
 
   if (mapElement) {
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v10",
-      // center: [13.404954, 52.520008],
-      zoom: 15,
-      // attributionControl: false,
-    });
+
 console.log("create map")
     // only build a map if there's a div#map to inject into
 
@@ -184,5 +187,5 @@ console.log("set markers")
 console.log("loaded")
 };
 
-export { initMapbox }; // ES6 module export
+export { initMapbox, map }; // ES6 module export
 
