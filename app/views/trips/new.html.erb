@@ -10,7 +10,7 @@
 <div class="container-trip-new">
   <div class="trip-new-box">
     <div class="text-center mt-3">
-      <h1 class="title"><strong>Plan Your Trip</strong></h1>
+      <h1 class="title mb-2"><strong>Plan Your Trip</strong></h1>
     </div>
 
     <div class="text-center">
@@ -18,7 +18,7 @@
         <%= f.input :final_destination, label: false, placeholder: 'Where do you wanna ride?'%>
         <%= f.hidden_field :start_location_latitude %>
         <%= f.hidden_field :start_location_longitude %>
-        <%= f.submit "Start Trip", class: "btn primary-btn" %>
+        <%= f.submit "Start Trip", class: "btn primary-btn", style: "width: 83%" %>
       <% end %>
     </div>
   </div>

@@ -1,12 +1,14 @@
 <div class="popup">
   <div class="pop-img">
-    <%= cl_image_tag garden.photo.key, height: 80, width: 140, crop: :fill %>
+    <%= cl_image_tag garden.photo.key, height: 70, width: 130, crop: :fill %>
   </div>
   <div class="container-popup">
     <div class="popup-card">
       <h6 class="text-center mt-2 mb-1"><%= garden.name %></h6>
-      <h6 class="text-center", style="font-weight: 100">★ <%= Review.average(:rating).round(2) %></h6>
-    <div class="popup-button-flex">  <%= simple_form_for [@trip, @segment] do |f| %>
+      <% unless garden.reviews.blank? %>
+        <h6 class="text-center mb-1", style="font-weight: 100">⭐ <%= garden.reviews.average(:rating) %></h6>
+      <% end %>
+    <div class="popup-button-flex mb-1">  <%= simple_form_for [@trip, @segment] do |f| %>
       <%= f.association :garden, as: :hidden, input_html: { value: garden.id } %>
       <%= f.input :destination, as: :hidden, input_html: { value: garden.address } %>
       <%= f.button :submit, "Select", class: "btn primary-btn primary-btn-popup-select" %>

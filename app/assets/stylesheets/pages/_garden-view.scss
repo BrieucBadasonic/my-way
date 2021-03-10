@@ -159,27 +159,38 @@
   margin-bottom: -16px;
 }
 
-.tent-capacity {
-  display: flex;
-  flex-direction: row;
-  margin-top: -3px;
-  margin-left: -64px;
-}
+// .tent-capacity {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: -3px;
+// }
 
 .avatar-view-page {
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  margin-top: 5px;
 }
 
-.tent {
-  margin-right: 4px;
-
+.container-garden-rating-capacity .tent-capacity-and-rating .tent-capacity img {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  // margin-left: 6px;
 }
 
-.capacity {
-  margin-left: 4px;
-  margin-top: 2px;
+// .capacity {
+//   margin-right: 10px;
+// }
+
+.container-garden-rating-capacity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.container-garden-rating-capacity .tent-capacity-and-rating {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row !important;
+}

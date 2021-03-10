@@ -7,7 +7,8 @@ class GardensController < ApplicationController
     end
     @garden = Garden.find(params[:id])
     @facilities = @garden.facilities
-  end
 
+    @average_rating = @garden.reviews.average(:rating)
+  end
 
 end

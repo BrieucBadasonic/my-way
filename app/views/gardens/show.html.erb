@@ -10,30 +10,22 @@
           <div>
             <%= cl_image_tag @garden.user.photo.key, class: "avatar-view-page" %>
           </div>
-          <div class="stars-owner">
-            <p class="mb-1"><%= @garden.user.username %>'s garden</p>
-              <% if !@garden.reviews.blank? %>
-                <p style="font-weight: 100">★ <%= Review.average(:rating).round(2) %></p>
-              <% end %>
-          </div>
-          <div class="owner-capacity">
-            <div class="owner-name">
-              <p><%= @garden.user.username %>'s garden</p>
-            </div>
-            <div class="tent-capacity">
-              <p>
-                <div class="tent">
-                  <%= image_tag("tent.svg") %>
-                </div>
-                <div class="capacity">
+            <div class="container-garden-rating-capacity">
+              <div class="stars-owner mb-2">
+                <p class="mb-1 ml-2"><%= @garden.user.username %>'s garden</p>
+                <div class="tent-capacity-and-rating">
+                  <% if !@garden.reviews.blank? %>
+                    <p class="capacity", style="font-weight: 100; padding-bottom: 1px">★ <%= @average_rating %></p>
+                  <% end %>
+                  <p class="mb-1", style="font-weight: 100"><%= image_tag("tent.svg", style:"margin-bottom: 5px") %>
                   <%= @garden.tent_capacity %>
+                  </p>
                 </div>
-              </p>
+              </div>
             </div>
-          </div>
         </div>
-
-      <div class="container">
+    </div>
+    <div class="container">
         <div class="row-facilities">
           <% @facilities.each do |facility| %>
             <div class="garden-chip col-3">
@@ -49,7 +41,6 @@
           <% end %>
         </div>
       </div>
-    </div>
 
     <div class="garden-description border-bottom">
       <p><%= @garden.description %></p>
@@ -66,7 +57,7 @@
         <% else %>
           <% @garden.reviews.each do |review| %>
             <p><%= review.user.first_name %></p>
-            <p><% (review.rating).times do %>
+            <p style="font-size: 12px"><% (review.rating).times do %>
             <%= "★" %>
             <% end %>
             <% (5 - review.rating).times do %>
@@ -93,7 +84,6 @@
       </div>
     </div>
   </div>
-</div>
 
 
 

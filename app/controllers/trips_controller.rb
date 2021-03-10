@@ -27,6 +27,7 @@ class TripsController < ApplicationController
         facility: garden.facilities.all,
         infoWindow: render_to_string(partial: "info_window", locals: { garden: garden }),
         image_url: helpers.asset_url('campingmarker1.svg'),
+        average_rating: garden.reviews.average(:rating),
       }
     end
     @destination = {
