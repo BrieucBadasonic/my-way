@@ -1,6 +1,6 @@
-.btn-review-segment {
-  margin-top: 4px !important;
-}
+// .btn-review-segment {
+//   margin-top: 4px !important;
+// }
 
 .segment-show-card {
   margin-top: 8px;
@@ -10,7 +10,7 @@
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   width: 92vw;
   border-radius: 8px;
-  padding-bottom: 34px;
+  height: 359px;
 }
 
 .hidden {
@@ -42,9 +42,9 @@
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -13px;
   margin-bottom: 21px;
-  // border-radius: 3%;
+  border-radius: 8px;
 }
 
 .card-garden-segment > img {
