@@ -270,12 +270,12 @@ garden2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 puts "2/20"
 
 garden3 = Garden.new(name: "Hilly Garden",
-                   description: "Non-landscaped garden in rural area with nice play hill, within walking distance of shops and eateries. When we are at home, the toilet can be used ;-).",
-                   address: "Dorfstraße 7, 04936 Dahme/Mark",
+                   description: "Non-landscaped garden in rural area with nice play hill, within walking distance of shops and eateries. We never travelled by bike, but would really like to try.",
+                   address: "Hauptstraße 5, 04932 Röderland",
                    tent_capacity: 4,
-                   user: user4)
+                   user: user21)
 garden3.save!
-file = URI.open('https://res.cloudinary.com/duogrvvdx/image/upload/v1614618627/garden%20seeds/garden_3_o5nbhy.jpg')
+file = URI.open('https://res.cloudinary.com/duogrvvdx/image/upload/v1615455040/garden%20seeds/hilly-garden_d22cby.jpg')
 garden3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
 puts "3/20"
@@ -358,12 +358,12 @@ garden10.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg
 puts "10/20"
 
 garden11 = Garden.new(name: "Cherry Tree Garden",
-                   description: "The garden is in the backyard of our house. Behind the garden, there is some old cherry and pear trees.",
+                   description: "The garden is in the backyard of our house. There is some old cherry trees providing shadow. I'm a bike traveller enthusiast and always happy to share experiences.",
                    address: "Damsdorf, 15938 Steinreich",
                    tent_capacity: 3,
                    user: user12)
 garden11.save!
-file = URI.open('https://res.cloudinary.com/duogrvvdx/image/upload/v1614618628/garden%20seeds/garden_11_f5gbji.jpg')
+file = URI.open('https://res.cloudinary.com/duogrvvdx/image/upload/v1615455039/garden%20seeds/cherry-tree-garden_lhiwwk.jpg')
 garden11.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
 puts "11/20"
@@ -425,7 +425,7 @@ puts "16/20"
 
 garden17 = Garden.new(name: "Hill Garden",
                    description: "Bushy garden on the hill. Not perfectly flat but nice. Steep climb to reach your destination ... ",
-                   address: "Hauptstraße 5, 04932 Röderland",
+                   address: "Dorfstraße 7, 04936 Dahme/Mark",
                    tent_capacity: 2,
                    user: user18)
 garden17.save!
@@ -460,7 +460,7 @@ garden20 = Garden.new(name: "Little Savage Garden",
                    description: "Welcome in my little savage garden behind the house",
                    address: "Stechau, 04936 Fichtwald",
                    tent_capacity: 1,
-                   user: user21)
+                   user: user4)
 garden20.save!
 file = URI.open('https://res.cloudinary.com/duogrvvdx/image/upload/v1614618637/garden%20seeds/garden_20_fbpjts.jpg')
 garden20.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
