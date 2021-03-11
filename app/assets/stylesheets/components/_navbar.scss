@@ -78,3 +78,15 @@
   font-size: 16px;
   margin-bottom: 3px;
 }
+
+.dropdown-item {
+
+  &-logout:active {
+    text-decoration: none;
+    background-color: #D16014;
+  }
+
+  &-logout:focus {
+    background-color: #D16014;
+  }
+}
