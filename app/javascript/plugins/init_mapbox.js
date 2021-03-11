@@ -10,11 +10,12 @@ console.log(mapElement)
 if (mapElement) {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 };
+  const start = [10.4515, 51.1657]
   const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/streets-v10",
-      // center: [13.404954, 52.520008],
-      zoom: 15,
+      style: "mapbox://styles/brieucbadasonic/ckm40wbz631om17qxae17hl37",
+      center: start,
+      zoom: 4,
       // attributionControl: false,
     });
 
@@ -23,7 +24,7 @@ if (mapElement) {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  map.fitBounds(bounds, { padding: 30, maxZoom: 13, duration: 5000 });
 };
 
 const updateStats = (distance, hours, minutes) => {
@@ -111,6 +112,14 @@ console.log(currentLocation)
           const formStartLongitude = document.getElementById("trip_start_location_longitude")
           formStartLongitude.value = currentLocation.longitude
 
+          map.flyTo({
+            center: [currentLocation.longitude, currentLocation.latitude],
+            zoom: 15,
+            bearing: 0,
+            speed: 0.5,
+            curev: 1
+          })
+
         }, (error) => {
           console.log("this is an error")
         });
@@ -124,6 +133,7 @@ console.log("trip#show")
         if (origin || destination) {
             directions.setOrigin([origin.lng, origin.lat]);
             directions.setDestination([destination.lng, destination.lat]);
+
             let coordinates = `coordinates=${origin.lng},${origin.lat};${destination.lng},${destination.lat}`
             callApiToGetDistanceAndTime(coordinates)
             getGardenCoordOnClick(map, origin);
@@ -176,7 +186,7 @@ console.log("set markers")
             .addTo(map);
         });
 
-        // fitMapToMarkers(map, markers);
+        fitMapToMarkers(map, markers);
 
 
 
