@@ -79,14 +79,11 @@
   margin-bottom: 3px;
 }
 
-.dropdown-item {
+.dropdown-item:active {
+  text-decoration: none;
+  background-color: #D16014;
+}
 
-  &-logout:active {
-    text-decoration: none;
+.dropdown-item:focus {
     background-color: #D16014;
-  }
-
-  &-logout:focus {
-    background-color: #D16014;
-  }
 }
