@@ -8,7 +8,7 @@ h1 {
 .backgroundimage {
   background-size: cover;
   background-position-y: center;
-  background-position-x: 47%;
+  background-position-x: 50%;
   padding-top: 47px;
   height: 100vh;
   display: flex;
@@ -26,22 +26,23 @@ h1 {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  margin-top: 52px;
+  width: 70px;
+  height: 70px;
 }
 
 .myway {
-  padding-top: 11px;
-  margin-top: -12%;
-  filter: drop-shadow(2px 2px 10px #FFFFFF);
-  width: 70%;
+  padding-top: 0px;
+  margin-top: -7%;
+  // filter: drop-shadow(2px 2px 10px #FFFFFF);
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .sentense {
-  margin-top: -35px;
+  margin-top: -24px;
   padding-top: 0px;
   width: 80%;
   display: block;
