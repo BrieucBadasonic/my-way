@@ -15,7 +15,7 @@
                 <p class="mb-1 ml-2"><%= @garden.user.username %>'s garden</p>
                 <div class="tent-capacity-and-rating">
                   <% if !@garden.reviews.blank? %>
-                    <p class="capacity", style="font-weight: 100; padding-bottom: 1px">★ <%= @average_rating %></p>
+                    <p class="capacity", style="font-weight: 100; padding-bottom: 1px">★ <%= @average_rating.round(2) %></p>
                   <% end %>
                   <p class="mb-1", style="font-weight: 100"><%= image_tag("tent.svg", style:"margin-bottom: 5px") %>
                   <%= @garden.tent_capacity %>
