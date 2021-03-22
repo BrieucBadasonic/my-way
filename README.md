@@ -9,6 +9,17 @@
   </a>
 </div>
 
+# Idea
+
+My way had been developed to help Bicycle Traveller to plan their trip and find a garden to pitch their tent for the night.
+This idea is define as *Discover, Meet and Share*
+
+<div style="display: flex">
+  <img src="https://res.cloudinary.com/duogrvvdx/image/upload/c_scale,w_154/v1616441472/samples/www.myway.bike__iPhone_6_7_8_nrb8fy.png">
+  <img src="https://res.cloudinary.com/duogrvvdx/image/upload/c_scale,w_154/v1616446511/samples/Screenshot_2021-03-22_at_21.52.29_yneg8r.png">
+  <img src="https://res.cloudinary.com/duogrvvdx/image/upload/c_scale,w_154/v1616441474/samples/www.myway.bike_trips_82_segments_37_iPhone_6_7_8_nozurk.png">
+</div>
+
 # Team
 
 Lisbeth Purrucker -
@@ -31,4 +42,12 @@ Brieuc Labiouse -
 &nbsp;
 [![GitHub](https://i.stack.imgur.com/tskMh.png) GitHub](https://github.com/BrieucBadasonic)
 
+# Stack
+
+- HTML
+- CSS
+- JavaScript
+- Ruby On Rails
+- Map Services - Mapbox
+- Deploy on Heroku
 
