@@ -22,9 +22,9 @@
      <div><p class="navbar-text-garden">Find a Garden</p></div>
     <% end %>
 
-    <%= link_to "gps", class: "navbar-brand" do %>
+    <%= link_to new_garden_path, class: "navbar-brand" do %>
       <%= image_tag "icons/navbar/gps.svg" %>
-      <div><p class="navbar-text-gps">GPS</p></div>
+      <div><p class="navbar-text-gps">Add a Garden</p></div>
     <% end %>
 
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item dropdown-item-logout" %>
