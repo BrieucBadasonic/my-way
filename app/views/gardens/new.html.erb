@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Add Your Garden</h1>
+
+  <div class="form-garden">
+    <%= simple_form_for @garden do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :tent_capacity, collection: 1..10  %>
+      <%= f.input :photo, as: :file %>
+    <%= f.submit "Add Garden" %>
+    <% end %>
+  </div>
+</div>
