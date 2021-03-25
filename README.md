@@ -11,7 +11,7 @@
 
 # Idea
 
-My way had been developed to help Bicycle Travellers to plan their trip and find a garden where they could pitch their tent for the night.
+My way had been developed to help Bicycle Travellers to plan their trip as they go and find a garden where they could pitch their tent for the night.
 This idea is defined as *Discover, Meet and Share*
 
 <div style="display: flex">
