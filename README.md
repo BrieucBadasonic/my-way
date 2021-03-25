@@ -11,8 +11,8 @@
 
 # Idea
 
-My way had been developed to help Bicycle Travellers to plan their trip as they go and find a garden where they could pitch their tent for the night.
-This idea is defined as *Discover, Meet and Share*
+My Way has been developed for Bicycle Travellers to allow both flexible on the go trip-planning as well as finding a garden where they could pitch their tent comfortably.
+This idea is defined as *Discover, Meet and Share*.
 
 <div style="display: flex">
   <img src="https://res.cloudinary.com/duogrvvdx/image/upload/c_scale,w_154/v1616441472/samples/www.myway.bike__iPhone_6_7_8_nrb8fy.png">
