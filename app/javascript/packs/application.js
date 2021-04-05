@@ -24,11 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initMapbox }       from "../plugins/init_mapbox.js";
+import { createMap }        from "../plugins/init_map.js";
 
 import { initAutocomplete } from "../plugins/init_autocomplete.js";
 
-import { initStarRating } from '../plugins/init_star_rating';
+import { initStarRating }   from '../plugins/init_star_rating';
 
 // import { finishrideButton } from "../plugins/finishride_button";
 
@@ -38,7 +38,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
-  initMapbox();
+  createMap();
   initAutocomplete();
 
   // finishrideButton();

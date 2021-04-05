@@ -197,5 +197,5 @@ console.log("set markers")
 console.log("loaded")
 };
 
-export { initMapbox, map }; // ES6 module export
+// export { initMapbox, map }; // ES6 module export
 

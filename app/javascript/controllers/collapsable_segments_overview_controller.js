@@ -4,7 +4,7 @@ import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
 import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 
 import { Controller } from "stimulus"
-import { map } from "../plugins/init_mapbox.js";
+// import { map } from "../plugins/init_mapbox.js";
 
 export default class extends Controller {
   static targets = [ "icon", "segmentmap", "segmentcontainer", "segmenttripnew" ]
