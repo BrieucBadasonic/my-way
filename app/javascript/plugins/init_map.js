@@ -7,10 +7,12 @@ import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
 import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 
 // import local JS function
-import { locateUser } from "./locateUser.js";
+import { locateUser }                  from "./locateUser.js";
+import { calculateItinary }            from "./calculateItinary.js";
+import { handleMarkers }               from "./handleMarkers.js";
 
 const createMap = () => {
-  // selecting the map element
+  // selecting the map element from the DOM
   const mapElement = document.getElementById("map");
 
   // get the API key out of the map element if the map element exist
@@ -32,7 +34,7 @@ const createMap = () => {
     }
   );
 
-  // add directions to the map
+  // add an empty cycling directions to the map
   map.on("load", function () {
     const directions = new MapboxDirections(
       {
@@ -49,9 +51,20 @@ const createMap = () => {
 
     map.addControl(directions, "top-left");
 
+    // we inject a dataset.view properties from the backend side to tell JS
+    // in which view we are so we can call the right function and inject the informations
+    // we need on the map
     switch (mapElement.dataset.view) {
       case "trip-new":
+        // if we are on the trip#new page --> locate and zoom on user current position
         locateUser(map, directions);
+        break;
+      case "trip-show":
+        // if we are on the trip#show page
+        // --> calculate the itinary and update distance and riding time
+        calculateItinary(mapElement, directions, map);
+        // --> display the garden markers
+        handleMarkers(mapElement, map);
         break;
     }
   });
