@@ -66,6 +66,9 @@ const createMap = () => {
         // --> display the garden markers
         handleMarkers(mapElement, map);
         break;
+      case "segment-show":
+        calculateItinary(mapElement, directions, map);
+        break;
     }
   });
 

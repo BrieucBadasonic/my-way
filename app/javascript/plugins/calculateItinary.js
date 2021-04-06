@@ -6,6 +6,8 @@ const calculateItinary = (mapElement, directions, map) => {
   let origin = JSON.parse(mapElement.dataset.origin);
   let destination  = JSON.parse(mapElement.dataset.destination);
 
+  // if we have and origin and a destination
+  // we create a coordinates variable
   if (origin && destination) {
     directions.setOrigin([origin.lng, origin.lat]);
     directions.setDestination([destination.lng, destination.lat]);
