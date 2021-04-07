@@ -1,4 +1,4 @@
-<div class="container">
+<div class="garden-add-box">
   <h1>Add Your Garden</h1>
 
   <div class="form-garden">
@@ -8,7 +8,9 @@
       <%= f.input :address %>
       <%= f.input :tent_capacity, collection: 1..10  %>
       <%= f.input :photo, as: :file %>
-    <%= f.submit "Add Garden" %>
+    <%= f.submit "Add Garden", class: "btn primary-btn primary-btn-add-garden"%>
     <% end %>
   </div>
 </div>
+
+
