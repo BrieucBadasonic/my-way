@@ -159,3 +159,13 @@
   opacity: 1 !important;
   margin-top: -62px;
 }
+
+/* Media query - landscape phones */
+@media only screen
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+    .btn-div{
+
+    }
+
+  }

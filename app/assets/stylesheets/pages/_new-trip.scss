@@ -8,9 +8,8 @@ label {
 }
 
 .trip-new-box {
-  // border: 1px solid grey;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 56px;
+  margin-bottom: 56px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -18,7 +17,7 @@ label {
   width: 92vw;
   border-radius: 8px;
   padding-bottom: 19px;
-  
+
   &-show {
     margin-top: 16px;
   }
@@ -36,4 +35,54 @@ label {
 
 .ap-input-icon svg {
   top: 60% !important;
+}
+
+.trip-new-form {
+  margin-top: -8px;
+}
+
+.container-contents-trip-new {
+  margin-top: auto;
+}
+
+/* Media query - landscape phones */
+@media only screen
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+    .trip-new-box {
+      margin-top: 20px;
+      height: 152px;
+    }
+
+    .trip-new-form {
+      margin-top: -16px;
+
+    }
+
+    .title {
+      margin-top: -12px;
+    }
+
+    .container-contents-trip-new {
+      margin-top: -10px;
+
+    }
+
+  }
+
+/* Media query - laptops */
+@media only screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .myway {
+      margin-top: -32px;
+    }
+
+    .logo {
+      margin-top: 24px;
+    }
+    .sentence {
+      margin-top: -32px;
+    }
 }
