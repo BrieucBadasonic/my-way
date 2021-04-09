@@ -26,27 +26,93 @@ h1 {
 }
 
 .logo {
-  margin-top: 32px;
   width: 70px;
   height: 70px;
+  margin-top: 32px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .myway {
-  padding-top: 0px;
-  margin-top: -7%;
-  // filter: drop-shadow(2px 2px 10px #FFFFFF);
-  width: 50%;
+  margin-top: -8%;
+  width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.sentense {
+.sentence {
   margin-top: -24px;
-  padding-top: 0px;
-  width: 80%;
+  width: 340px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Media query - landscape phones */
+@media only screen
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+    .logo {
+      margin-top: -32px;
+    }
+
+    .myway {
+      margin-top: -10%;
+      width: 184px;
+    }
+
+    .sentence {
+      margin-top: -42px;
+      width: 315px;
+    }
+
+  }
+
+/* Media query - portrait ipads (NOTE: Only did this for the landing page for now, can do for other pages if needed) */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .logo {
+      margin-top: 112px;
+    }
+
+    .sentence {
+      margin-top: -40px;
+    }
+  }
+
+  /* Media query - landscape ipads */
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .logo {
+      margin-top: 56px;
+    }
+  }
+
+/* Media query - laptops */
+@media only screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .myway {
+      margin-top: -32px;
+    }
+
+    .logo {
+      margin-top: 24px;
+    }
+    .sentence {
+      margin-top: -32px;
+    }
+}
+
+
+
 
