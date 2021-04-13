@@ -522,5 +522,9 @@ Garden.all.each do |garden|
   facilities_array.uniq.each { |facility| GardenFacility.create(garden: garden, facility: facility) }
 end
 
+puts "create a general chatroom"
+
+Chatroom.create(name: "general")
+
 puts "21 users and 20 gardens with garden facilities had been created..."
 puts "You are amazing, we are going to build a super cool app!"
