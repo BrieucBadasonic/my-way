@@ -36,3 +36,53 @@ label {
 .ap-input-icon svg {
   top: 60% !important;
 }
+
+.trip-new-form {
+  margin-top: -8px;
+}
+
+.container-contents-trip-new {
+  margin-top: auto;
+}
+
+/* Media query - landscape phones */
+@media only screen
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+    .trip-new-box {
+      margin-top: 20px;
+      height: 152px;
+    }
+
+    .trip-new-form {
+      margin-top: -16px;
+
+    }
+
+    .title {
+      margin-top: -12px;
+    }
+
+    .container-contents-trip-new {
+      margin-top: -10px;
+
+    }
+
+  }
+
+/* Media query - laptops */
+@media only screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .myway {
+      margin-top: -32px;
+    }
+
+    .logo {
+      margin-top: 24px;
+    }
+    .sentence {
+      margin-top: -32px;
+    }
+}

@@ -9,13 +9,12 @@
   >
 </div>
 
-
 <div class="container-trip-new">
-  <div class="trip-new-box trip-new-box-show">
-    <div class=""> <!--need to add class -->
+  <div class="trip-new-box">
+    <div class="title-div">
       <h1 class="title mb-0"><strong>Pick a Garden</strong></h1>
     </div>
-    <div>
+    <div class="text-div">
       <p class="text-center", style="margin-bottom: 20px">Select a route by picking a garden</p>
     </div>
 
@@ -35,7 +34,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="btn-div">
       <%= link_to "Change Final Destination", new_trip_path, data: {turbolinks: "false"}, class: "btn primary-btn" %>
     </div>
   </div>

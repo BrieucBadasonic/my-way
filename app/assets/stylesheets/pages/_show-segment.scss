@@ -1,7 +1,3 @@
-// .btn-review-segment {
-//   margin-top: 4px !important;
-// }
-
 .segment-show-card {
   margin-top: 8px;
   padding-left: 16px;
@@ -19,7 +15,6 @@
 
 .closed {
   visibility: hidden;
-  // height: 0;
 }
 
 .segment-container {
@@ -61,7 +56,6 @@
 
 .card-garden-segment p {
   font-size: 12px;
-  // line-height: 1.4;
   opacity: 0.7;
   margin-bottom: 0;
   margin-top: 2px;
@@ -73,19 +67,64 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  // align-items: flex-start;
   position: relative;
   margin-left: 15px;
 }
 
-// .card-garden-segment-infos .card-garden-segment-user {
-//   position: absolute;
-//   left: 80px;
-//   right: 40px;
-//   top: -20px;
-//   width: 40px;
-// }
-
 .card-garden-segment-infos p {
   // padding-top: 8px;
+}
+
+.title-div {
+  margin-top: auto;
+}
+
+.text-div {
+  margin-top: auto;
+}
+
+
+/* Media query - landscape phones */
+@media only screen
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+    .stats-container {
+      justify-content: space-evenly;
+      margin-top: -8px;
+    }
+
+    .title-div {
+      margin-top: -4px;
+    }
+
+    .text-div {
+      margin-top: -10px;
+    }
+
+    .trip-new-box {
+      margin-top: 20px;
+      height: 248px;
+    }
+
+  }
+
+/* Media query - laptops */
+@media only screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .stats-container {
+      justify-content: space-evenly;
+      margin-top: -8px;
+    }
+
+    .stats-container-distance {
+      margin-right: -64px
+
+    }
+
+    .stats-container-duration {
+      margin-left: -64px
+    }
+
 }
