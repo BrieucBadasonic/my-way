@@ -1,14 +1,16 @@
+<div id="map" class="d-none"
+     data-view="trip-new"
+     data-set-markers="false"
+     style="width: 100%; height: 60vh;"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+     >
+</div>
+
 <h1>#<%= @chatroom.name %></h1>
 
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.username %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
+    <%= render "messages/message", message: message %>
   <% end %>
 </div>
 

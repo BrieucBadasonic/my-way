@@ -24,22 +24,21 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { createMap }        from "../plugins/init_map.js";
+import { createMap }           from "../plugins/init_map.js";
 
-import { initAutocomplete } from "../plugins/init_autocomplete.js";
+import { initAutocomplete }    from "../plugins/init_autocomplete.js";
 
-import { initStarRating }   from '../plugins/init_star_rating';
+import { initStarRating }      from '../plugins/init_star_rating';
+
+import { initChatroomCable }   from '../channels/chatroom_channel';
 
 // import { finishrideButton } from "../plugins/finishride_button";
-
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
   createMap();
   initAutocomplete();
+  initChatroomCable();
 
   // finishrideButton();
 });
