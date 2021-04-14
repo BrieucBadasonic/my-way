@@ -27,6 +27,11 @@
       <div><p class="navbar-text-gps">Add a Garden</p></div>
     <% end %>
 
+    <%= link_to chatroom_path(1), class: "navbar-brand" do %>
+      <%= image_tag "icons/navbar/chat.svg" %>
+      <div><p class="navbar-text-chat">Message</p></div>
+    <% end %>
+
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item dropdown-item-logout" %>
      <% else %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
